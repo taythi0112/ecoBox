@@ -14,8 +14,8 @@ const PRODUCTS = [
     cat: 'hop-com',
     price: 129000,
     old: 169000,
-    color: '#16396b',
-    bg: '#d6ebf7',
+    color: '#2d6645',
+    bg: '#d6f0e1',
     tag: 'new',
     rating: 4.9,
     reviews: 42,
@@ -23,7 +23,7 @@ const PRODUCTS = [
     material: 'Nhựa PP số 5 tái chế (BPA Free)',
     temp: '-20°C đến 120°C',
     desc: 'Thiết kế 1 ngăn rộng rãi, nắp khóa gài 4 cạnh trợ lực chống tràn tuyệt đối. Thích hợp cho bữa cơm văn phòng gọn gàng.',
-    img: ''
+    img: 'images/hopcom.png'
   },
   {
     id: 2,
@@ -31,8 +31,8 @@ const PRODUCTS = [
     cat: 'hop-com',
     price: 189000,
     old: 249000,
-    color: '#f0647c',
-    bg: '#fde3ea',
+    color: '#d48b04',
+    bg: '#fffadb',
     tag: 'hot',
     rating: 5.0,
     reviews: 86,
@@ -40,7 +40,7 @@ const PRODUCTS = [
     material: 'Nhựa PP số 5 tái chế cao cấp',
     temp: '-20°C đến 120°C',
     desc: '3 ngăn phân chia khoa học: cơm, thức ăn mặn và rau riêng biệt. Giữ trọn hương vị từng món, dùng được lò vi sóng.',
-    img: ''
+    img: 'images/hopcom.png'
   },
   {
     id: 3,
@@ -48,8 +48,8 @@ const PRODUCTS = [
     cat: 'hop-com',
     price: 229000,
     old: 299000,
-    color: '#3f7fc0',
-    bg: '#dcecf8',
+    color: '#3d7a57',
+    bg: '#e4f5ec',
     tag: '',
     rating: 4.8,
     reviews: 35,
@@ -57,7 +57,7 @@ const PRODUCTS = [
     material: 'Nhựa PP số 5 tái chế 2 lớp cách nhiệt',
     temp: '-20°C đến 120°C',
     desc: 'Dung tích khủng 1400ml chia làm 2 tầng xếp chồng thông minh, tặng kèm bộ thìa đũa kháng khuẩn gài gọn trên nắp.',
-    img: ''
+    img: 'images/hopcom.png'
   },
   {
     id: 4,
@@ -65,8 +65,8 @@ const PRODUCTS = [
     cat: 'hop-com',
     price: 259000,
     old: 320000,
-    color: '#16396b',
-    bg: '#e4eef8',
+    color: '#2d6645',
+    bg: '#d6f0e1',
     tag: 'new',
     rating: 4.9,
     reviews: 29,
@@ -74,7 +74,7 @@ const PRODUCTS = [
     material: 'Nhựa PP tái chế + Lớp chân không',
     temp: '-10°C đến 110°C',
     desc: 'Nắp van thoát hơi thông minh mở trước khi quay lò vi sóng, gioăng silicone đôi giữ nhiệt ấm nóng đến 4 tiếng.',
-    img: ''
+    img: 'images/hopcom.png'
   },
   {
     id: 5,
@@ -82,8 +82,8 @@ const PRODUCTS = [
     cat: 'hop-com',
     price: 99000,
     old: 130000,
-    color: '#5aa9d6',
-    bg: '#e3f3fb',
+    color: '#52946e',
+    bg: '#eef8f2',
     tag: '',
     rating: 4.7,
     reviews: 64,
@@ -91,7 +91,7 @@ const PRODUCTS = [
     material: 'Nhựa PP số 5 tinh lọc an toàn',
     temp: '-20°C đến 120°C',
     desc: 'Giá mềm dành cho học sinh - sinh viên, siêu nhẹ chỉ 180g, vừa vặn mọi ngăn balo mang đi học hằng ngày.',
-    img: ''
+    img: 'images/hopcom.png'
   },
   {
     id: 6,
@@ -99,8 +99,8 @@ const PRODUCTS = [
     cat: 'tru-dong',
     price: 149000,
     old: 195000,
-    color: '#5aa9d6',
-    bg: '#e3f3fb',
+    color: '#52946e',
+    bg: '#d6f0e1',
     tag: 'hot',
     rating: 4.9,
     reviews: 73,
@@ -108,7 +108,7 @@ const PRODUCTS = [
     material: 'Nhựa PP dẻo chuyên dụng tủ đông',
     temp: '-30°C đến 100°C',
     desc: 'Chất liệu nhựa dẻo không bị nứt vỡ khi đông đá nhiệt độ âm sâu. Xếp chồng tiết kiệm 50% diện tích tủ lạnh.',
-    img: ''
+    img: 'images/hoptrudong.png'
   },
   {
     id: 7,
@@ -116,8 +116,8 @@ const PRODUCTS = [
     cat: 'tru-dong',
     price: 99000,
     old: 0,
-    color: '#16396b',
-    bg: '#e4eef8',
+    color: '#2d6645',
+    bg: '#eef8f2',
     tag: 'new',
     rating: 4.8,
     reviews: 19,
@@ -125,7 +125,7 @@ const PRODUCTS = [
     material: 'Nhựa PP trong suốt tái chế',
     temp: '-25°C đến 110°C',
     desc: 'Thân hộp trong suốt dễ nhận biết thực phẩm bên trong, nắp viền gờ kín khít ngăn lẫn mùi tuyệt đối.',
-    img: ''
+    img: 'images/hoptrudong.png'
   },
   {
     id: 8,
@@ -133,8 +133,8 @@ const PRODUCTS = [
     cat: 'tru-dong',
     price: 119000,
     old: 150000,
-    color: '#f0647c',
-    bg: '#fbd9e6',
+    color: '#d48b04',
+    bg: '#fffadb',
     tag: '',
     rating: 4.8,
     reviews: 31,
@@ -142,7 +142,7 @@ const PRODUCTS = [
     material: 'Nhựa PP số 5 đạt chuẩn FDA',
     temp: '-20°C đến 100°C',
     desc: 'Lựa chọn số 1 cho mẹ chuẩn bị đồ ăn dặm hoặc thực phẩm meal-prep đầu tuần cho cả gia đình.',
-    img: ''
+    img: 'images/hoptrudong.png'
   },
   {
     id: 9,
@@ -150,8 +150,8 @@ const PRODUCTS = [
     cat: 'tru-dong',
     price: 139000,
     old: 175000,
-    color: '#3f7fc0',
-    bg: '#e0edf8',
+    color: '#3d7a57',
+    bg: '#e4f5ec',
     tag: '',
     rating: 4.9,
     reviews: 22,
@@ -159,7 +159,7 @@ const PRODUCTS = [
     material: 'Nhựa PP đàn hồi tái chế',
     temp: '-30°C đến 100°C',
     desc: 'Đáy hộp thiết kế rãnh nổi giúp rã đông thực phẩm nhanh hơn và không bị đọng nước bề mặt.',
-    img: ''
+    img: 'images/hoptrudong.png'
   },
   {
     id: 10,
@@ -167,8 +167,8 @@ const PRODUCTS = [
     cat: 'tru-dong',
     price: 179000,
     old: 220000,
-    color: '#16396b',
-    bg: '#d9e9f5',
+    color: '#2d6645',
+    bg: '#d6f0e1',
     tag: 'new',
     rating: 5.0,
     reviews: 17,
@@ -176,7 +176,7 @@ const PRODUCTS = [
     material: 'Nhựa PP tái chế kháng khuẩn',
     temp: '-10°C đến 100°C',
     desc: 'Có khay lọc nước bên dưới đáy giúp rau thơm, hoa quả luôn ráo nước và tươi lâu hơn đến 2 tuần.',
-    img: ''
+    img: 'images/hoptrudong.png'
   },
   {
     id: 11,
@@ -184,8 +184,8 @@ const PRODUCTS = [
     cat: 'mang-di',
     price: 79000,
     old: 99000,
-    color: '#3f7fc0',
-    bg: '#e0edf8',
+    color: '#3d7a57',
+    bg: '#e4f5ec',
     tag: '',
     rating: 4.7,
     reviews: 48,
@@ -193,7 +193,7 @@ const PRODUCTS = [
     material: 'Nhựa PP tái chế siêu bền',
     temp: '-20°C đến 120°C',
     desc: 'Nhỏ gọn bỏ vừa túi xách, quai silicon móc tiện lợi mang theo hạt ngũ cốc, sữa chua hoặc đồ ăn vặt.',
-    img: ''
+    img: 'images/tuimangdi.png'
   },
   {
     id: 12,
@@ -201,8 +201,8 @@ const PRODUCTS = [
     cat: 'mang-di',
     price: 69000,
     old: 0,
-    color: '#16396b',
-    bg: '#d9e9f5',
+    color: '#2d6645',
+    bg: '#eef8f2',
     tag: 'new',
     rating: 4.8,
     reviews: 33,
@@ -210,7 +210,7 @@ const PRODUCTS = [
     material: 'Nhựa PP số 5 an toàn',
     temp: '-20°C đến 100°C',
     desc: 'Nắp vặn xoáy cao su chống rò rỉ nước trái cây, bề mặt nhám mờ chống trầy xước.',
-    img: ''
+    img: 'images/tuimangdi.png'
   },
   {
     id: 13,
@@ -218,8 +218,8 @@ const PRODUCTS = [
     cat: 'mang-di',
     price: 109000,
     old: 145000,
-    color: '#f0647c',
-    bg: '#fde3ea',
+    color: '#d48b04',
+    bg: '#fffadb',
     tag: '',
     rating: 4.9,
     reviews: 58,
@@ -227,7 +227,7 @@ const PRODUCTS = [
     material: 'Nhựa PP tái chế đạt chuẩn an toàn trẻ em',
     temp: '-20°C đến 110°C',
     desc: 'Màu sắc pastel xinh xắn, quai xách gập gọn linh hoạt, góc cạnh được mài nhẵn an toàn cho bé.',
-    img: ''
+    img: 'images/tuimangdi.png'
   },
   {
     id: 14,
@@ -235,8 +235,8 @@ const PRODUCTS = [
     cat: 'mang-di',
     price: 89000,
     old: 119000,
-    color: '#5aa9d6',
-    bg: '#e3f3fb',
+    color: '#52946e',
+    bg: '#d6f0e1',
     tag: 'hot',
     rating: 4.9,
     reviews: 95,
@@ -244,7 +244,7 @@ const PRODUCTS = [
     material: 'Nhựa PP tái chế trong suốt',
     temp: '-10°C đến 95°C',
     desc: 'Miệng bình rộng dễ vệ sinh và cho đá viên, nắp bật một chạm kèm khóa chống bật vô ý.',
-    img: ''
+    img: 'images/tuimangdi.png'
   },
   {
     id: 15,
@@ -252,8 +252,8 @@ const PRODUCTS = [
     cat: 'mang-di',
     price: 115000,
     old: 150000,
-    color: '#16396b',
-    bg: '#dcecf8',
+    color: '#2d6645',
+    bg: '#e4f5ec',
     tag: '',
     rating: 4.9,
     reviews: 44,
@@ -261,7 +261,7 @@ const PRODUCTS = [
     material: 'Vải Canvas mộc + Lớp màng nhôm cách nhiệt',
     temp: 'Giữ nóng/lạnh 4 - 6 tiếng',
     desc: 'Thiết kế tối giản phong cách Nhật, quai xách may chéo chịu lực đến 5kg, chống thấm nước bên trong.',
-    img: ''
+    img: 'images/tuimangdi.png'
   },
   {
     id: 16,
@@ -269,8 +269,8 @@ const PRODUCTS = [
     cat: 'combo',
     price: 399000,
     old: 560000,
-    color: '#5aa9d6',
-    bg: '#e6f1f9',
+    color: '#d48b04',
+    bg: '#fffadb',
     tag: 'hot',
     rating: 5.0,
     reviews: 112,
@@ -278,7 +278,7 @@ const PRODUCTS = [
     material: 'Trọn bộ hộp PP tái chế cao cấp',
     temp: '-20°C đến 120°C',
     desc: 'Set quà tặng hoàn hảo cho lối sống xanh, đóng gói trong hộp kraft sinh học sang trọng kèm thiệp viết tay.',
-    img: ''
+    img: 'images/hopqua.png'
   },
   {
     id: 17,
@@ -286,8 +286,8 @@ const PRODUCTS = [
     cat: 'combo',
     price: 549000,
     old: 840000,
-    color: '#3f7fc0',
-    bg: '#dcecf8',
+    color: '#3d7a57',
+    bg: '#e4f5ec',
     tag: '',
     rating: 4.9,
     reviews: 67,
@@ -295,7 +295,7 @@ const PRODUCTS = [
     material: 'Nhựa PP số 5 tái chế',
     temp: '-20°C đến 120°C',
     desc: 'Giải pháp chuẩn bị bữa trưa đầu tuần gọn gàng, tiết kiệm đến 35% so với mua từng hộp riêng lẻ.',
-    img: ''
+    img: 'images/hopqua.png'
   },
   {
     id: 18,
@@ -303,8 +303,8 @@ const PRODUCTS = [
     cat: 'combo',
     price: 219000,
     old: 289000,
-    color: '#16396b',
-    bg: '#d6ebf7',
+    color: '#2d6645',
+    bg: '#d6f0e1',
     tag: 'new',
     rating: 4.8,
     reviews: 39,
@@ -312,7 +312,7 @@ const PRODUCTS = [
     material: 'Nhựa PP tái chế',
     temp: '-20°C đến 120°C',
     desc: 'Set cơ bản nhất cho bạn trẻ bắt đầu hành trình tự nấu ăn và cắt giảm đồ nhựa dùng 1 lần.',
-    img: ''
+    img: 'images/hopqua.png'
   },
   {
     id: 19,
@@ -320,8 +320,8 @@ const PRODUCTS = [
     cat: 'combo',
     price: 459000,
     old: 620000,
-    color: '#16396b',
-    bg: '#d6ebf7',
+    color: '#2d6645',
+    bg: '#d6f0e1',
     tag: '',
     rating: 4.9,
     reviews: 43,
@@ -329,7 +329,7 @@ const PRODUCTS = [
     material: 'Nhựa PP số 5 tủ đông chuyên dụng',
     temp: '-30°C đến 100°C',
     desc: 'Được các bà nội trợ tin chọn để phân loại thịt cá và bảo quản đồ ăn sạch sẽ trong tuần.',
-    img: '',
+    img: 'images/hopqua.png',
     sold: true
   }
 ];
@@ -422,30 +422,30 @@ const discount = p => p.old ? Math.round((1 - p.price / p.old) * 100) : 0;
 
 /* HÌNH MINH HỌA VECTOR SVG ĐẸP MẮT THEO TỪNG LOẠI HỘP */
 function boxSVG(p) {
-  const c = p.color || '#16396b';
+  const c = p.color || '#2d6645';
   if (p.cat === 'hop-com') {
     return `<svg viewBox="0 0 140 110" aria-hidden="true">
-      <ellipse cx="70" cy="98" rx="48" ry="7" fill="rgba(0,0,0,.08)"/>
+      <ellipse cx="70" cy="98" rx="48" ry="7" fill="rgba(0,0,0,.06)"/>
       <rect x="20" y="44" width="100" height="50" rx="14" fill="${c}"/>
-      <rect x="14" y="30" width="112" height="22" rx="10" fill="${c}" opacity=".85"/>
-      <rect x="26" y="34" width="36" height="6" rx="3" fill="#ffffff" opacity=".6"/>
+      <rect x="14" y="30" width="112" height="22" rx="10" fill="${c}" opacity=".88"/>
+      <rect x="26" y="34" width="36" height="6" rx="3" fill="#fae477" opacity=".9"/>
       <path d="M70 82c-10-2-15-10-13-20 10 0 18 6 18 15 0 3-1 4-5 5z" fill="#ffffff" opacity=".95"/>
       <rect x="68" y="48" width="4" height="42" rx="2" fill="rgba(255,255,255,.25)"/>
     </svg>`;
   } else if (p.cat === 'tru-dong') {
     return `<svg viewBox="0 0 140 110" aria-hidden="true">
-      <ellipse cx="70" cy="98" rx="46" ry="7" fill="rgba(0,0,0,.08)"/>
+      <ellipse cx="70" cy="98" rx="46" ry="7" fill="rgba(0,0,0,.06)"/>
       <rect x="22" y="46" width="96" height="48" rx="12" fill="${c}" opacity=".88"/>
-      <rect x="16" y="34" width="108" height="18" rx="8" fill="#5aa9d6"/>
-      <rect x="28" y="38" width="40" height="5" rx="2.5" fill="#fff" opacity=".7"/>
+      <rect x="16" y="34" width="108" height="18" rx="8" fill="#52946e"/>
+      <rect x="28" y="38" width="40" height="5" rx="2.5" fill="#fae477" opacity=".85"/>
       <circle cx="70" cy="70" r="14" fill="rgba(255,255,255,.3)"/>
       <path d="M70 60v20M60 70h20" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
     </svg>`;
   } else if (p.cat === 'mang-di') {
     return `<svg viewBox="0 0 140 110" aria-hidden="true">
-      <ellipse cx="70" cy="98" rx="32" ry="6" fill="rgba(0,0,0,.08)"/>
+      <ellipse cx="70" cy="98" rx="32" ry="6" fill="rgba(0,0,0,.06)"/>
       <rect x="42" y="28" width="56" height="68" rx="18" fill="${c}"/>
-      <rect x="50" y="16" width="40" height="16" rx="7" fill="#cfeaf8"/>
+      <rect x="50" y="16" width="40" height="16" rx="7" fill="#d6f0e1"/>
       <rect x="62" y="10" width="16" height="8" rx="4" fill="${c}"/>
       <circle cx="70" cy="62" r="12" fill="#fff" opacity=".85"/>
       <path d="M70 68c-4-1-6-4-5-8 4 0 7 2 7 6 0 1 0 1-2 2z" fill="${c}"/>
@@ -453,10 +453,10 @@ function boxSVG(p) {
   } else {
     // combo
     return `<svg viewBox="0 0 140 110" aria-hidden="true">
-      <ellipse cx="70" cy="98" rx="52" ry="7" fill="rgba(0,0,0,.08)"/>
+      <ellipse cx="70" cy="98" rx="52" ry="7" fill="rgba(0,0,0,.06)"/>
       <rect x="24" y="52" width="92" height="42" rx="12" fill="${c}"/>
-      <rect x="34" y="24" width="72" height="32" rx="10" fill="#f0647c" opacity=".9"/>
-      <rect x="30" y="18" width="80" height="12" rx="5" fill="#5aa9d6"/>
+      <rect x="34" y="24" width="72" height="32" rx="10" fill="#f4d348" opacity=".95"/>
+      <rect x="30" y="18" width="80" height="12" rx="5" fill="#52946e"/>
       <path d="M70 12v86" stroke="#ffffff" stroke-width="3" stroke-dasharray="4 2"/>
     </svg>`;
   }

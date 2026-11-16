@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <meta name="theme-color" content="#16396b">
+  <meta name="theme-color" content="#b7e0c8">
 </head>
 
 <body>
@@ -36,8 +36,8 @@
 
       <a href="#" class="logo" aria-label="EcoBox Trang chủ">
         <svg viewBox="0 0 40 40" width="36" height="36" aria-hidden="true">
-          <rect x="4" y="12" width="32" height="22" rx="6" fill="#16396b" />
-          <rect x="2" y="8" width="36" height="8" rx="4" fill="#5aa9d6" />
+          <rect x="4" y="12" width="32" height="22" rx="6" fill="#2d6645" />
+          <rect x="2" y="8" width="36" height="8" rx="4" fill="#fae477" />
           <path d="M20 29c-4-1-6-4-5-8 4 0 7 2 7 6 0 1 0 1-2 2z" fill="#fff" />
         </svg>
         <span>Eco<b>Box</b></span>
@@ -166,120 +166,54 @@
     <section class="categories">
       <div class="container">
         <div class="categories__list" id="categoryList">
-          <!-- 1. HỘP CƠM -->
+          <!-- 1. HỘP CƠM (ẢNH THỰC TẾ) -->
           <a href="#san-pham" data-filter="hop-com" class="cat">
             <span class="cat__icon">
-              <svg viewBox="0 0 64 64" width="48" height="48" fill="none">
-                <!-- Thân hộp cơm tầng dưới bo góc -->
-                <rect x="8" y="24" width="48" height="28" rx="8" fill="#16396b"/>
-                <rect x="6" y="20" width="52" height="8" rx="4" fill="#3f7fc0"/>
-                <!-- Nắp hộp trong suốt cao cấp -->
-                <rect x="10" y="14" width="44" height="8" rx="3" fill="#cfeaf8" opacity=".85"/>
-                <!-- Khóa gài 2 bên cạnh -->
-                <rect x="4" y="24" width="4" height="12" rx="2" fill="#5aa9d6"/>
-                <rect x="56" y="24" width="4" height="12" rx="2" fill="#5aa9d6"/>
-                <!-- Chi tiết ngăn chia cơm & đồ ăn bên trong -->
-                <rect x="14" y="32" width="16" height="14" rx="3" fill="#fff" opacity=".2"/>
-                <rect x="34" y="32" width="16" height="6" rx="2" fill="#f0647c" opacity=".8"/>
-                <rect x="34" y="40" width="16" height="6" rx="2" fill="#88d49e" opacity=".9"/>
-                <!-- Đũa / thìa kháng khuẩn gài trên nắp -->
-                <line x1="16" y1="18" x2="48" y2="18" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
-              </svg>
+              <img src="images/hopcom.png" alt="Hộp cơm" class="cat__img" loading="lazy">
             </span>
             <span>Hộp cơm</span>
           </a>
 
-          <!-- 2. HỘP TRỮ ĐÔNG (CÓ HIỆU ỨNG TỦ ĐÔNG & BĂNG TUYẾT) -->
+          <!-- 2. HỘP TRỮ ĐÔNG (ẢNH THỰC TẾ) -->
           <a href="#san-pham" data-filter="tru-dong" class="cat">
             <span class="cat__icon">
-              <svg viewBox="0 0 64 64" width="48" height="48" fill="none">
-                <!-- Thân hộp trữ đông dẻo trong suốt -->
-                <rect x="10" y="22" width="44" height="30" rx="6" fill="#e3f3fb" stroke="#5aa9d6" stroke-width="2"/>
-                <!-- Nắp trữ đông kín hơi chống lẫn mùi -->
-                <rect x="8" y="16" width="48" height="8" rx="4" fill="#5aa9d6"/>
-                <rect x="14" y="19" width="36" height="2" rx="1" fill="#fff" opacity=".8"/>
-                <!-- Tinh thể bông tuyết biểu tượng trữ đông cực lạnh -->
-                <path d="M32 28v18M23 37h18" stroke="#3f7fc0" stroke-width="2" stroke-linecap="round"/>
-                <path d="M26 31l12 12M38 31L26 43" stroke="#3f7fc0" stroke-width="2" stroke-linecap="round"/>
-                <circle cx="32" cy="37" r="2.5" fill="#16396b"/>
-                <!-- Hơi lạnh bốc lên -->
-                <path d="M22 11c1-2 3-2 4 0s3 2 4 0" stroke="#8fc0dc" stroke-width="1.8" stroke-linecap="round"/>
-                <path d="M34 11c1-2 3-2 4 0s3 2 4 0" stroke="#8fc0dc" stroke-width="1.8" stroke-linecap="round"/>
-              </svg>
+              <img src="images/hoptrudong.png" alt="Hộp trữ đông" class="cat__img" loading="lazy">
             </span>
             <span>Hộp trữ đông</span>
           </a>
 
-          <!-- 3. MANG ĐI MỖI NGÀY (HỘP CƠM CÓ QUAI XÁCH & BÌNH NƯỚC ON-THE-GO) -->
+          <!-- 3. MANG ĐI MỖI NGÀY (ẢNH THỰC TẾ) -->
           <a href="#san-pham" data-filter="mang-di" class="cat">
             <span class="cat__icon">
-              <svg viewBox="0 0 64 64" width="48" height="48" fill="none">
-                <!-- Quai xách silicone gập mở linh hoạt -->
-                <path d="M24 18c0-6 4-10 8-10s8 4 8 10" stroke="#f0647c" stroke-width="3" stroke-linecap="round"/>
-                <!-- Thân hộp mang đi phong cách On-The-Go năng động -->
-                <rect x="14" y="24" width="36" height="28" rx="10" fill="#fbd9e6" stroke="#f0647c" stroke-width="2"/>
-                <rect x="12" y="19" width="40" height="7" rx="3.5" fill="#f0647c"/>
-                <!-- Dây đai khóa giữ nắp -->
-                <rect x="29" y="19" width="6" height="33" rx="2" fill="#16396b"/>
-                <circle cx="32" cy="35" r="3" fill="#fff"/>
-                <!-- Móc treo balo thể thao -->
-                <circle cx="48" cy="15" r="4" stroke="#5aa9d6" stroke-width="2"/>
-              </svg>
+              <img src="images/tuimangdi.png" alt="Mang đi mỗi ngày" class="cat__img" loading="lazy">
             </span>
             <span>Mang đi mỗi ngày</span>
           </a>
 
-          <!-- 4. COMBO QUÀ TẶNG (HỘP SET QUÀ XANH THẮT NƠ SANG TRỌNG) -->
+          <!-- 4. COMBO QUÀ TẶNG (ẢNH THỰC TẾ) -->
           <a href="#san-pham" data-filter="combo" class="cat">
             <span class="cat__icon">
-              <svg viewBox="0 0 64 64" width="48" height="48" fill="none">
-                <!-- Thân hộp quà sinh thái -->
-                <rect x="12" y="26" width="40" height="26" rx="5" fill="#16396b"/>
-                <!-- Nắp hộp quà viền rộng -->
-                <rect x="10" y="20" width="44" height="8" rx="3" fill="#5aa9d6"/>
-                <!-- Dải ruy băng quà tặng đỏ hồng nổi bật -->
-                <rect x="29" y="20" width="6" height="32" fill="#f0647c"/>
-                <!-- Chiếc nơ quà tặng cách điệu cực xinh -->
-                <path d="M32 20c-5-7-14-3-10 3 3 5 10 2 10-3z" fill="#f0647c"/>
-                <path d="M32 20c5-7 14-3 10 3-3 5-10 2-10-3z" fill="#f0647c"/>
-                <circle cx="32" cy="19" r="3.5" fill="#fde3ea"/>
-                <!-- Ánh sáng lấp lánh quà tặng -->
-                <path d="M48 12l2 3 3 2-3 2-2 3-2-3-3-2 3-2 2-3z" fill="#f0647c" opacity=".8"/>
-              </svg>
+              <img src="images/hopqua.png" alt="Combo quà tặng" class="cat__img" loading="lazy">
             </span>
             <span>Combo quà tặng</span>
           </a>
 
-          <!-- 5. SỐNG XANH (MẦM CÂY ECO TƯƠI MÁT) -->
+          <!-- 5. SỐNG XANH (ẢNH THỰC TẾ) -->
           <a href="#song-xanh" class="cat">
             <span class="cat__icon">
-              <svg viewBox="0 0 64 64" width="48" height="48" fill="none">
-                <!-- Chậu cây sinh học từ nhựa tái chế -->
-                <path d="M20 38h24l-3 14H23L20 38z" fill="#16396b"/>
-                <ellipse cx="32" cy="38" rx="12" ry="3" fill="#5aa9d6"/>
-                <!-- Thân mầm cây xanh vươn lên -->
-                <path d="M32 37V22" stroke="#2b9348" stroke-width="3" stroke-linecap="round"/>
-                <!-- Chiếc lá xanh bên trái -->
-                <path d="M32 28c-7-2-12-8-10-14 6 1 10 6 10 14z" fill="#55a630"/>
-                <!-- Chiếc lá non bên phải -->
-                <path d="M32 22c6-1 11-6 10-12-6 0-9 5-10 12z" fill="#80b918"/>
-                <circle cx="20" cy="14" r="1.5" fill="#55a630"/>
-              </svg>
+              <img src="images/songxanh.png" alt="Sống xanh" class="cat__img" loading="lazy">
             </span>
             <span>Sống xanh</span>
           </a>
 
-          <!-- 6. TẤT CẢ SẢN PHẨM (BỘ SƯU TẬP TỔNG HỢP) -->
+          <!-- 6. TẤT CẢ SẢN PHẨM -->
           <a href="#san-pham" data-filter="all" class="cat">
             <span class="cat__icon">
-              <svg viewBox="0 0 64 64" width="48" height="48" fill="none">
-                <!-- 4 khối đại diện cho danh mục đa dạng -->
-                <rect x="14" y="14" width="14" height="14" rx="4" fill="#16396b"/>
-                <rect x="36" y="14" width="14" height="14" rx="4" fill="#5aa9d6"/>
-                <rect x="14" y="36" width="14" height="14" rx="4" fill="#f0647c"/>
-                <rect x="36" y="36" width="14" height="14" rx="4" fill="#cfeaf8"/>
-                <!-- Ngôi sao lung linh lấp lánh -->
-                <path d="M32 24l2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5z" fill="#fff"/>
+              <svg viewBox="0 0 64 64" width="46" height="46" fill="none">
+                <!-- Hai ngôi sao lấp lánh vàng nhạt pastel tinh tế -->
+                <path d="M28 12c0 9-7 16-16 16 9 0 16 7 16 16 0-9 7-16 16-16-9 0-16-7-16-16z" fill="#f4d348"/>
+                <path d="M46 32c0 6-5 11-11 11 6 0 11 5 11 11 0-6 5-11 11-11-6 0-11-5-11-11z" fill="#fae477"/>
+                <circle cx="18" cy="46" r="3" fill="#2d6645"/>
               </svg>
             </span>
             <span>Tất cả</span>
@@ -874,8 +808,8 @@
       <div class="footer__brand-col">
         <a href="#" class="logo logo--footer" aria-label="EcoBox">
           <svg viewBox="0 0 40 40" width="34" height="34" aria-hidden="true">
-            <rect x="4" y="12" width="32" height="22" rx="6" fill="#16396b" />
-            <rect x="2" y="8" width="36" height="8" rx="4" fill="#5aa9d6" />
+            <rect x="4" y="12" width="32" height="22" rx="6" fill="#2d6645" />
+            <rect x="2" y="8" width="36" height="8" rx="4" fill="#fae477" />
             <path d="M20 29c-4-1-6-4-5-8 4 0 7 2 7 6 0 1 0 1-2 2z" fill="#fff" />
           </svg>
           <span>Eco<b>Box</b></span>
