@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoBox - Hộp đựng thức ăn tái chế | Đồ án Nhóm 14</title>
+  <meta name="description"
+    content="EcoBox - Hộp đựng thức ăn làm từ vật liệu tái chế, thiết kế thông minh, an toàn cho sức khỏe và thân thiện với môi trường.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <meta name="theme-color" content="#16396b">
+</head>
+
+<body>
+
+  <!-- THANH THÔNG BÁO TRÊN CÙNG -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <span>🚚 <b>Miễn phí vận chuyển</b> toàn quốc cho đơn hàng từ 500.000₫</span>
+      <span class="topbar__right">Hotline tư vấn: <b>0900 000 000</b> &nbsp;|&nbsp; 🇻🇳 Tiếng Việt</span>
+    </div>
+  </div>
+
+  <!-- HEADER CHÍNH -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Mở menu di động">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 6h18M3 12h18M3 18h18" />
+        </svg>
+      </button>
+
+      <a href="#" class="logo" aria-label="EcoBox Trang chủ">
+        <svg viewBox="0 0 40 40" width="36" height="36" aria-hidden="true">
+          <rect x="4" y="12" width="32" height="22" rx="6" fill="#16396b" />
+          <rect x="2" y="8" width="36" height="8" rx="4" fill="#5aa9d6" />
+          <path d="M20 29c-4-1-6-4-5-8 4 0 7 2 7 6 0 1 0 1-2 2z" fill="#fff" />
+        </svg>
+        <span>Eco<b>Box</b></span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <ul>
+          <li class="has-sub">
+            <a href="#san-pham">Sản phẩm</a>
+            <ul class="sub">
+              <li><a href="#san-pham" data-filter="all">✨ Tất cả sản phẩm</a></li>
+              <li><a href="#san-pham" data-filter="hop-com">🍱 Hộp cơm trưa văn phòng</a></li>
+              <li><a href="#san-pham" data-filter="tru-dong">❄️ Hộp trữ đông & bảo quản</a></li>
+              <li><a href="#san-pham" data-filter="mang-di">🎒 Hộp & bình mang đi</a></li>
+              <li><a href="#san-pham" data-filter="combo">🎁 Combo quà tặng tiết kiệm</a></li>
+            </ul>
+          </li>
+          <li><a href="#sale" class="sale-link">Ưu đãi (SALE)</a></li>
+          <li><a href="#cau-chuyen">Câu chuyện</a></li>
+          <li><a href="#cua-hang">Hệ thống cửa hàng</a></li>
+          <li><a href="#tin-tuc">Tin tức</a></li>
+          <li class="has-sub">
+            <a href="#bao-hanh">Bảo hành</a>
+            <ul class="sub">
+              <li><a href="#bao-hanh" data-tab-target="lookup">🔍 Tra cứu bảo hành</a></li>
+              <li><a href="#bao-hanh" data-tab-target="activate">⚡ Kích hoạt bảo hành</a></li>
+              <li><a href="#bao-hanh" data-tab-target="policy">📜 Chính sách 1 đổi 1</a></li>
+            </ul>
+          </li>
+          <li><a href="#qua-tang">Quà tặng DN</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button class="icon-btn" id="searchBtn" title="Tìm kiếm sản phẩm" aria-label="Tìm kiếm">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="7" />
+            <path d="M21 21l-4.3-4.3" />
+          </svg>
+        </button>
+
+        <button class="icon-btn" id="wishlistBtn" title="Danh sách yêu thích" aria-label="Yêu thích">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+              d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+          </svg>
+          <span class="cart-count" id="wishlistCount">0</span>
+        </button>
+
+        <button class="icon-btn" id="accountBtn" title="Tài khoản khách hàng" aria-label="Tài khoản">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="8" r="4" />
+            <path d="M4 21c0-4 4-6 8-6s8 2 8 6" />
+          </svg>
+        </button>
+
+        <button class="icon-btn cart-btn" id="cartBtn" title="Xem giỏ hàng" aria-label="Giỏ hàng">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 7h12l-1 13H7L6 7z" />
+            <path d="M9 7a3 3 0 016 0" />
+          </svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- THANH TÌM KIẾM NHANH TRÊN HEADER -->
+    <div class="searchbar" id="searchbar">
+      <div class="container">
+        <form id="searchForm">
+          <input type="search" id="searchInput"
+            placeholder="Tìm theo tên hộp (vd: hộp cơm, trữ đông, quà tặng, 800ml...)" autocomplete="off">
+          <button type="submit" class="btn btn--primary">Tìm kiếm</button>
+          <button type="button" class="btn btn--outline" id="clearSearchBtn">Đóng</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SLIDER BANNER -->
+    <section class="hero" id="hero">
+      <div class="hero__track" id="heroTrack">
+        <article class="hero__slide hero__slide--1">
+          <div class="container hero__content">
+            <span class="eyebrow">Thương hiệu hộp đựng thức ăn tái chế</span>
+            <h1>Đẹp phong cách<br>Chuẩn sống xanh</h1>
+            <p>Mỗi chiếc hộp là một lần giảm rác nhựa dùng một lần – thiết kế hiện đại, bền bỉ và an toàn tuyệt đối cho
+              bữa ăn mỗi ngày.</p>
+            <div class="hero__buttons">
+              <a href="#san-pham" class="btn btn--primary">Khám phá sản phẩm</a>
+              <a href="#cua-hang" class="btn btn--outline">Xem trạm trải nghiệm</a>
+            </div>
+          </div>
+        </article>
+        <article class="hero__slide hero__slide--2">
+          <div class="container hero__content">
+            <span class="eyebrow">Ưu đãi tháng này</span>
+            <h1>Combo hộp cơm<br>giảm đến 35%</h1>
+            <p>Bộ hộp cơm văn phòng thông minh kèm túi canvas lót bạc giữ nhiệt, tiết kiệm hơn khi mua trọn gói.</p>
+            <div class="hero__buttons">
+              <a href="#sale" class="btn btn--primary">Săn ưu đãi ngay</a>
+              <a href="#san-pham" data-filter="combo" class="btn btn--outline">Xem combo quà tặng</a>
+            </div>
+          </div>
+        </article>
+        <article class="hero__slide hero__slide--3">
+          <div class="container hero__content">
+            <span class="eyebrow">Đồ án sinh viên đổi mới sáng tạo</span>
+            <h1>Từ vật liệu tái chế<br>đến bữa ăn mỗi ngày</h1>
+            <p>Nhóm sinh viên tự nghiên cứu nguồn nguyên liệu PP số 5 an toàn thực phẩm, thử nghiệm độ kín khít và hoàn
+              thiện từng góc bo.</p>
+            <div class="hero__buttons">
+              <a href="#cau-chuyen" class="btn btn--primary">Câu chuyện của chúng tôi</a>
+              <a href="#bao-hanh" class="btn btn--outline">Cam kết chất lượng</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <button class="hero__nav hero__nav--prev" id="heroPrev" aria-label="Slide trước">&#10094;</button>
+      <button class="hero__nav hero__nav--next" id="heroNext" aria-label="Slide sau">&#10095;</button>
+      <div class="hero__dots" id="heroDots"></div>
+    </section>
+
+    <!-- DANH MỤC NHANH (QUICK CATEGORIES VỚI ICON SẢN PHẨM VECTOR SẮC NÉT) -->
+    <section class="categories">
+      <div class="container">
+        <div class="categories__list" id="categoryList">
+          <!-- 1. HỘP CƠM -->
+          <a href="#san-pham" data-filter="hop-com" class="cat">
+            <span class="cat__icon">
+              <svg viewBox="0 0 64 64" width="48" height="48" fill="none">
+                <!-- Thân hộp cơm tầng dưới bo góc -->
+                <rect x="8" y="24" width="48" height="28" rx="8" fill="#16396b"/>
+                <rect x="6" y="20" width="52" height="8" rx="4" fill="#3f7fc0"/>
+                <!-- Nắp hộp trong suốt cao cấp -->
+                <rect x="10" y="14" width="44" height="8" rx="3" fill="#cfeaf8" opacity=".85"/>
+                <!-- Khóa gài 2 bên cạnh -->
+                <rect x="4" y="24" width="4" height="12" rx="2" fill="#5aa9d6"/>
+                <rect x="56" y="24" width="4" height="12" rx="2" fill="#5aa9d6"/>
+                <!-- Chi tiết ngăn chia cơm & đồ ăn bên trong -->
+                <rect x="14" y="32" width="16" height="14" rx="3" fill="#fff" opacity=".2"/>
+                <rect x="34" y="32" width="16" height="6" rx="2" fill="#f0647c" opacity=".8"/>
+                <rect x="34" y="40" width="16" height="6" rx="2" fill="#88d49e" opacity=".9"/>
+                <!-- Đũa / thìa kháng khuẩn gài trên nắp -->
+                <line x1="16" y1="18" x2="48" y2="18" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <span>Hộp cơm</span>
+          </a>
+
+          <!-- 2. HỘP TRỮ ĐÔNG (CÓ HIỆU ỨNG TỦ ĐÔNG & BĂNG TUYẾT) -->
+          <a href="#san-pham" data-filter="tru-dong" class="cat">
+            <span class="cat__icon">
+              <svg viewBox="0 0 64 64" width="48" height="48" fill="none">
+                <!-- Thân hộp trữ đông dẻo trong suốt -->
+                <rect x="10" y="22" width="44" height="30" rx="6" fill="#e3f3fb" stroke="#5aa9d6" stroke-width="2"/>
+                <!-- Nắp trữ đông kín hơi chống lẫn mùi -->
+                <rect x="8" y="16" width="48" height="8" rx="4" fill="#5aa9d6"/>
+                <rect x="14" y="19" width="36" height="2" rx="1" fill="#fff" opacity=".8"/>
+                <!-- Tinh thể bông tuyết biểu tượng trữ đông cực lạnh -->
+                <path d="M32 28v18M23 37h18" stroke="#3f7fc0" stroke-width="2" stroke-linecap="round"/>
+                <path d="M26 31l12 12M38 31L26 43" stroke="#3f7fc0" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="32" cy="37" r="2.5" fill="#16396b"/>
+                <!-- Hơi lạnh bốc lên -->
+                <path d="M22 11c1-2 3-2 4 0s3 2 4 0" stroke="#8fc0dc" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M34 11c1-2 3-2 4 0s3 2 4 0" stroke="#8fc0dc" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <span>Hộp trữ đông</span>
+          </a>
+
+          <!-- 3. MANG ĐI MỖI NGÀY (HỘP CƠM CÓ QUAI XÁCH & BÌNH NƯỚC ON-THE-GO) -->
+          <a href="#san-pham" data-filter="mang-di" class="cat">
+            <span class="cat__icon">
+              <svg viewBox="0 0 64 64" width="48" height="48" fill="none">
+                <!-- Quai xách silicone gập mở linh hoạt -->
+                <path d="M24 18c0-6 4-10 8-10s8 4 8 10" stroke="#f0647c" stroke-width="3" stroke-linecap="round"/>
+                <!-- Thân hộp mang đi phong cách On-The-Go năng động -->
+                <rect x="14" y="24" width="36" height="28" rx="10" fill="#fbd9e6" stroke="#f0647c" stroke-width="2"/>
+                <rect x="12" y="19" width="40" height="7" rx="3.5" fill="#f0647c"/>
+                <!-- Dây đai khóa giữ nắp -->
+                <rect x="29" y="19" width="6" height="33" rx="2" fill="#16396b"/>
+                <circle cx="32" cy="35" r="3" fill="#fff"/>
+                <!-- Móc treo balo thể thao -->
+                <circle cx="48" cy="15" r="4" stroke="#5aa9d6" stroke-width="2"/>
+              </svg>
+            </span>
+            <span>Mang đi mỗi ngày</span>
+          </a>
+
+          <!-- 4. COMBO QUÀ TẶNG (HỘP SET QUÀ XANH THẮT NƠ SANG TRỌNG) -->
+          <a href="#san-pham" data-filter="combo" class="cat">
+            <span class="cat__icon">
+              <svg viewBox="0 0 64 64" width="48" height="48" fill="none">
+                <!-- Thân hộp quà sinh thái -->
+                <rect x="12" y="26" width="40" height="26" rx="5" fill="#16396b"/>
+                <!-- Nắp hộp quà viền rộng -->
+                <rect x="10" y="20" width="44" height="8" rx="3" fill="#5aa9d6"/>
+                <!-- Dải ruy băng quà tặng đỏ hồng nổi bật -->
+                <rect x="29" y="20" width="6" height="32" fill="#f0647c"/>
+                <!-- Chiếc nơ quà tặng cách điệu cực xinh -->
+                <path d="M32 20c-5-7-14-3-10 3 3 5 10 2 10-3z" fill="#f0647c"/>
+                <path d="M32 20c5-7 14-3 10 3-3 5-10 2-10-3z" fill="#f0647c"/>
+                <circle cx="32" cy="19" r="3.5" fill="#fde3ea"/>
+                <!-- Ánh sáng lấp lánh quà tặng -->
+                <path d="M48 12l2 3 3 2-3 2-2 3-2-3-3-2 3-2 2-3z" fill="#f0647c" opacity=".8"/>
+              </svg>
+            </span>
+            <span>Combo quà tặng</span>
+          </a>
+
+          <!-- 5. SỐNG XANH (MẦM CÂY ECO TƯƠI MÁT) -->
+          <a href="#song-xanh" class="cat">
+            <span class="cat__icon">
+              <svg viewBox="0 0 64 64" width="48" height="48" fill="none">
+                <!-- Chậu cây sinh học từ nhựa tái chế -->
+                <path d="M20 38h24l-3 14H23L20 38z" fill="#16396b"/>
+                <ellipse cx="32" cy="38" rx="12" ry="3" fill="#5aa9d6"/>
+                <!-- Thân mầm cây xanh vươn lên -->
+                <path d="M32 37V22" stroke="#2b9348" stroke-width="3" stroke-linecap="round"/>
+                <!-- Chiếc lá xanh bên trái -->
+                <path d="M32 28c-7-2-12-8-10-14 6 1 10 6 10 14z" fill="#55a630"/>
+                <!-- Chiếc lá non bên phải -->
+                <path d="M32 22c6-1 11-6 10-12-6 0-9 5-10 12z" fill="#80b918"/>
+                <circle cx="20" cy="14" r="1.5" fill="#55a630"/>
+              </svg>
+            </span>
+            <span>Sống xanh</span>
+          </a>
+
+          <!-- 6. TẤT CẢ SẢN PHẨM (BỘ SƯU TẬP TỔNG HỢP) -->
+          <a href="#san-pham" data-filter="all" class="cat">
+            <span class="cat__icon">
+              <svg viewBox="0 0 64 64" width="48" height="48" fill="none">
+                <!-- 4 khối đại diện cho danh mục đa dạng -->
+                <rect x="14" y="14" width="14" height="14" rx="4" fill="#16396b"/>
+                <rect x="36" y="14" width="14" height="14" rx="4" fill="#5aa9d6"/>
+                <rect x="14" y="36" width="14" height="14" rx="4" fill="#f0647c"/>
+                <rect x="36" y="36" width="14" height="14" rx="4" fill="#cfeaf8"/>
+                <!-- Ngôi sao lung linh lấp lánh -->
+                <path d="M32 24l2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5z" fill="#fff"/>
+              </svg>
+            </span>
+            <span>Tất cả</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ƯU ĐÃI MỖI NGÀY / BANNER PROMOTION -->
+    <section class="intro" id="sale">
+      <div class="container intro__inner">
+        <span class="eyebrow">Chương trình khuyến mãi đặc biệt</span>
+        <h2>Ưu đãi xanh mỗi ngày cùng EcoBox</h2>
+        <p>Chúng tôi tin rằng bữa ăn lý tưởng bắt đầu từ một chiếc hộp tử tế – bền, đẹp, an toàn và tốt cho hành tinh.
+          Giảm thêm 10% khi mang hộp cũ đến trạm thu gom đổi mới.</p>
+        <div class="intro__actions">
+          <a href="#san-pham" class="btn btn--outline">Khám phá ngay</a>
+          <a href="#cua-hang" class="btn btn--light">Tìm trạm đổi hộp</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- BỘ SƯU TẬP CHÍNH (CÓ BỘ LỌC, SẮP XẾP & CÁC NÚT PHÂN TRANG) -->
+    <section class="collection" id="san-pham">
+      <div class="container collection__layout">
+        <!-- BANNER BÊN TRÁI -->
+        <aside class="collection__banner banner banner--green">
+          <div>
+            <small>KHÁM PHÁ BỘ SƯU TẬP</small>
+            <h3>SẢN PHẨM MỚI<br>CHUẨN THÂN THIỆN</h3>
+            <p class="banner__desc">100% không chứa BPA, dùng an toàn trong lò vi sóng & máy rửa chén.</p>
+            <a href="#san-pham" class="btn btn--light" data-filter="all">Xem tất cả</a>
+          </div>
+          <div class="banner__art" aria-hidden="true">
+            <svg viewBox="0 0 200 160" width="100%">
+              <rect x="20" y="60" width="160" height="80" rx="18" fill="#fff" opacity=".9" />
+              <rect x="10" y="40" width="180" height="32" rx="14" fill="#cfeaf8" />
+              <circle cx="100" cy="106" r="22" fill="#5aa9d6" />
+              <path d="M100 118c-10-2-14-9-12-18 10 0 17 5 17 14 0 3-1 3-5 4z" fill="#fff" />
+            </svg>
+          </div>
+        </aside>
+
+        <!-- KHU VỰC HIỂN THỊ SẢN PHẨM VÀ NÚT CHUYỂN TRANG -->
+        <div class="collection__main">
+          <!-- TIÊU ĐỀ & TABS CHỌN DANH MỤC -->
+          <div class="collection__head">
+            <div>
+              <h2 id="gridTitle">Sản phẩm nổi bật</h2>
+              <p class="collection__count-text" id="gridCount">Đang tải danh sách sản phẩm...</p>
+            </div>
+            <div class="tabs" id="tabs">
+              <button class="tab is-active" data-filter="all">Tất cả</button>
+              <button class="tab" data-filter="hop-com">Hộp cơm</button>
+              <button class="tab" data-filter="tru-dong">Trữ đông</button>
+              <button class="tab" data-filter="mang-di">Mang đi</button>
+              <button class="tab" data-filter="combo">Combo</button>
+            </div>
+          </div>
+
+          <!-- THANH ĐIỀU HƯỚNG BỘ LỌC & SẮP XẾP -->
+          <div class="filter-bar">
+            <div class="filter-bar__left">
+              <div class="filter-control">
+                <label for="priceFilter">Mức giá:</label>
+                <select id="priceFilter" class="select-box">
+                  <option value="all">Tất cả mức giá</option>
+                  <option value="under100">Dưới 100.000₫</option>
+                  <option value="100-200">100.000₫ - 200.000₫</option>
+                  <option value="200-350">200.000₫ - 350.000₫</option>
+                  <option value="over350">Trên 350.000₫</option>
+                </select>
+              </div>
+
+              <div class="filter-control">
+                <label for="sortBy">Sắp xếp:</label>
+                <select id="sortBy" class="select-box">
+                  <option value="default">Mặc định (Nổi bật)</option>
+                  <option value="price-asc">Giá: Thấp đến Cao</option>
+                  <option value="price-desc">Giá: Cao đến Thấp</option>
+                  <option value="rating-desc">Đánh giá cao nhất ⭐</option>
+                  <option value="name-asc">Tên sản phẩm: A - Z</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="filter-bar__right">
+              <button class="btn-clear-filter" id="resetFilterBtn" title="Đặt lại toàn bộ bộ lọc">
+                <span>✕</span> Đặt lại lọc
+              </button>
+            </div>
+          </div>
+
+          <!-- LƯỚI SẢN PHẨM CHÍNH -->
+          <div class="product-grid" id="productGrid"></div>
+
+          <!-- THÔNG BÁO KHI KHÔNG TÌM THẤY -->
+          <div class="empty" id="emptyMsg" hidden>
+            <div class="empty__icon">🔍</div>
+            <h3>Không tìm thấy sản phẩm phù hợp</h3>
+            <p>Vui lòng thử chọn khoảng giá khác hoặc bấm đặt lại bộ lọc để xem toàn bộ sản phẩm.</p>
+            <button class="btn btn--outline" id="emptyResetBtn">Xem tất cả sản phẩm</button>
+          </div>
+
+          <!-- KHU VỰC CÁC NÚT PHÂN TRANG (PAGINATION) -->
+          <div class="pagination-wrapper" id="paginationWrapper">
+            <div class="pagination-info" id="paginationInfo">
+              Đang hiển thị trang 1
+            </div>
+
+            <div class="pagination" id="pagination">
+              <!-- Các nút phân trang (Trước, 1, 2, 3, Sau) sẽ được sinh động qua JavaScript -->
+            </div>
+
+            <div class="pagination-size">
+              <label for="pageSizeSelect">Hiển thị:</label>
+              <select id="pageSizeSelect" class="select-box select-box--sm">
+                <option value="6" selected>6 sp/trang</option>
+                <option value="9">9 sp/trang</option>
+                <option value="12">12 sp/trang</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BỘ SƯU TẬP 2: BÁN CHẠY NHẤT -->
+    <section class="collection collection--alt" id="ban-chay">
+      <div class="container collection__layout collection__layout--reverse">
+        <aside class="collection__banner banner banner--sand">
+          <div>
+            <small>ĐƯỢC YÊU THÍCH NHẤT</small>
+            <h3>LỰA CHỌN HÀNG ĐẦU<br>CỦA KHÁCH HÀNG</h3>
+            <p class="banner__desc">Những mẫu hộp nhận được nhiều phản hồi tích cực nhất từ người dùng văn phòng & sinh
+              viên.</p>
+            <a href="#san-pham" class="btn btn--light" data-filter="hop-com">Xem tất cả hộp cơm</a>
+          </div>
+          <div class="banner__art" aria-hidden="true">
+            <svg viewBox="0 0 200 160" width="100%">
+              <rect x="30" y="50" width="140" height="90" rx="20" fill="#fff" opacity=".9" />
+              <rect x="40" y="62" width="58" height="66" rx="12" fill="#cfeaf8" />
+              <rect x="104" y="62" width="56" height="30" rx="10" fill="#cfeaf8" />
+              <rect x="104" y="98" width="56" height="30" rx="10" fill="#fbd9e6" />
+            </svg>
+          </div>
+        </aside>
+        <div class="collection__main">
+          <div class="collection__head">
+            <div>
+              <h2>Bán chạy nhất tháng</h2>
+              <p class="collection__count-text">Top sản phẩm được đặt mua nhiều nhất</p>
+            </div>
+          </div>
+          <div class="product-grid" id="bestGrid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SỐNG XANH / TÁC ĐỘNG & TÍNH NĂNG -->
+    <section class="green" id="song-xanh">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">Sống xanh cùng EcoBox</span>
+          <h2>Mỗi chiếc hộp, một hành động thiết thực cho Trái Đất</h2>
+        </div>
+        <div class="stats">
+          <div class="stat">
+            <b data-count="12500">0</b>
+            <span>Hộp nhựa dùng một lần được giảm thiểu</span>
+          </div>
+          <div class="stat">
+            <b data-count="85">0</b>
+            <span>% Vật liệu từ nhựa PP số 5 đạt chuẩn tái chế</span>
+          </div>
+          <div class="stat">
+            <b data-count="365">0</b>
+            <span>Lần tái sử dụng bền bỉ mỗi năm</span>
+          </div>
+          <div class="stat">
+            <b data-count="100">0</b>
+            <span>% Bản quyền ý tưởng thiết kế nhóm sinh viên</span>
+          </div>
+        </div>
+        <div class="features">
+          <div class="feature">
+            <span>♻️</span>
+            <h4>Vật liệu tái chế an toàn</h4>
+            <p>Sử dụng hạt nhựa PP tái chế đã tinh lọc, chứng nhận không độc hại khi tiếp xúc thực phẩm nóng.</p>
+          </div>
+          <div class="feature">
+            <span>🧼</span>
+            <h4>Dễ dàng vệ sinh</h4>
+            <p>Bề mặt láng mịn chống bám dầu mỡ cứng đầu, các góc được bo tròn giúp chùi rửa nhanh chóng.</p>
+          </div>
+          <div class="feature">
+            <span>🔒</span>
+            <h4>Kín khít, chống tràn 100%</h4>
+            <p>Nắp gài 4 cạnh trợ lực kết hợp gioăng silicone mềm dẻo, giữ canh súp an toàn khi di chuyển.</p>
+          </div>
+          <div class="feature">
+            <span>🔥</span>
+            <h4>Chịu nhiệt vượt trội</h4>
+            <p>An toàn từ -20°C đến 120°C, quay lò vi sóng dễ dàng hoặc bảo quản lâu dài trong ngăn đông.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CÂU CHUYỆN THƯƠNG HIỆU -->
+    <section class="story" id="cau-chuyen">
+      <div class="container story__inner">
+        <div class="story__art" aria-hidden="true">
+          <svg viewBox="0 0 300 240" width="100%">
+            <rect width="300" height="240" rx="24" fill="#d6ebf7" />
+            <circle cx="240" cy="50" r="28" fill="#fbd9e6" />
+            <rect x="60" y="100" width="180" height="100" rx="22" fill="#16396b" />
+            <rect x="50" y="80" width="200" height="34" rx="16" fill="#5aa9d6" />
+            <path d="M150 180c-16-3-24-14-20-30 16 0 28 8 28 24 0 5-2 5-8 6z" fill="#fff" />
+          </svg>
+        </div>
+        <div class="story__text">
+          <span class="eyebrow">Câu chuyện thương hiệu</span>
+          <h2>Bắt đầu từ một đồ án, lớn lên cùng niềm tin sống xanh</h2>
+          <p>EcoBox được hình thành từ ý tưởng của một nhóm sinh viên: biến vật liệu tái chế thành những chiếc hộp đựng
+            thức ăn đẹp, bền, tiện dụng và mang phong cách tối giản thanh lịch.</p>
+          <p>Từ những bản vẽ phác thảo đầu tiên, in 3D mẫu thử nghiệm, đo đạc độ kín của gioăng silicone cho đến việc
+            lựa chọn công nghệ gia công an toàn, từng chi tiết đều chứa đựng tâm huyết của nhóm nghiên cứu trẻ.</p>
+          <div class="story__quote">
+            "Chúng tôi không chỉ làm ra một chiếc hộp – chúng tôi muốn lan tỏa thói quen chuẩn bị bữa ăn sạch và giảm
+            rác thải nhựa mỗi ngày."
+          </div>
+          <a href="#tin-tuc" class="btn btn--primary">Đọc nhật ký đồ án</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- HỆ THỐNG CỬA HÀNG & TRẠM TRẢI NGHIỆM XANH TẠI ĐÀ NẴNG (GẦN ĐH SƯ PHẠM) -->
+    <section class="stores-section" id="cua-hang">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">Điểm hẹn xanh tại Đà Nẵng</span>
+          <h2>Hệ thống Cửa hàng & Trạm thu gom EcoBox</h2>
+          <p>Mạng lưới các trạm trải nghiệm thực tế, bảo hành 1 đổi 1 và điểm thu gom hộp cũ đổi quà đặt ngay tại các vị trí thuận tiện quanh khu vực Trường ĐH Sư phạm Đà Nẵng.</p>
+        </div>
+
+        <div class="stores__grid">
+          <!-- TRẠM 1: 08 HÀ VĂN TÍNH -->
+          <div class="store-card">
+            <div class="store-card__badge">Đà Nẵng • Trạm Chính</div>
+            <h4>EcoHub Hà Văn Tính (Trạm Trải Nghiệm 01)</h4>
+            
+            <div class="store-info-list">
+              <p class="store-info-item">
+                <span class="store-icon store-icon--pin" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                    <circle cx="12" cy="9" r="2.5"/>
+                  </svg>
+                </span>
+                <span><b>Số 08 Hà Văn Tính</b>, P. Hòa Khánh Nam, Q. Liên Chiểu, TP. Đà Nẵng <small style="color:var(--pink); display:block; font-weight:700;">(Cách ĐH Sư phạm 250m)</small></span>
+              </p>
+
+              <p class="store-info-item">
+                <span class="store-icon store-icon--time" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                </span>
+                <span>Giờ mở cửa: <b>08:00 – 21:30</b> (Mở tất cả các ngày)</span>
+              </p>
+
+              <p class="store-info-item">
+                <span class="store-icon store-icon--phone" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                  </svg>
+                </span>
+                <span>Hotline: <a href="tel:0900000011" class="store-phone-link">0900 000 011</a></span>
+              </p>
+            </div>
+
+            <div class="store-card__perks">
+              <span>✓ Showroom trưng bày trọn bộ sản phẩm</span>
+              <span>✓ Trạm thu gom hộp cũ đổi voucher 20%</span>
+              <span>✓ Khắc tên laser miễn phí cho sinh viên</span>
+            </div>
+            <button class="btn btn--outline btn--block"
+              onclick="toast('Đang mở bản đồ chỉ đường đến 08 Hà Văn Tính, Liên Chiểu')">Xem bản đồ chỉ đường</button>
+          </div>
+
+          <!-- TRẠM 2: TRƯỜNG ĐH SƯ PHẠM ĐÀ NẴNG -->
+          <div class="store-card">
+            <div class="store-card__badge">Đà Nẵng • Trạm Sư Phạm</div>
+            <h4>EcoHub ĐH Sư Phạm (Trạm Trải Nghiệm 02)</h4>
+            
+            <div class="store-info-list">
+              <p class="store-info-item">
+                <span class="store-icon store-icon--pin" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                    <circle cx="12" cy="9" r="2.5"/>
+                  </svg>
+                </span>
+                <span><b>459 Tôn Đức Thắng</b>, P. Hòa Khánh Bắc, Q. Liên Chiểu, TP. Đà Nẵng <small style="color:#0077b6; display:block; font-weight:700;">(Khuôn viên Căn tin & Tòa CLB Sinh viên)</small></span>
+              </p>
+
+              <p class="store-info-item">
+                <span class="store-icon store-icon--time" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                </span>
+                <span>Giờ mở cửa: <b>07:30 – 19:30</b> (Thứ 2 – Thứ 7)</span>
+              </p>
+
+              <p class="store-info-item">
+                <span class="store-icon store-icon--phone" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                  </svg>
+                </span>
+                <span>Hotline: <a href="tel:0900000012" class="store-phone-link">0900 000 012</a></span>
+              </p>
+            </div>
+
+            <div class="store-card__perks">
+              <span>✓ Không gian trưng bày đồ án sinh viên</span>
+              <span>✓ Ưu đãi giảm 15% cho thẻ sinh viên ĐHĐN</span>
+              <span>✓ Trạm mượn hộp cơm dùng thử miễn phí</span>
+            </div>
+            <button class="btn btn--outline btn--block"
+              onclick="toast('Đang mở bản đồ chỉ đường đến ĐH Sư phạm Đà Nẵng, 459 Tôn Đức Thắng')">Xem bản đồ chỉ đường</button>
+          </div>
+
+          <!-- TRẠM 3: Ở MEGA MART (MEGA MARKET ĐÀ NẴNG) -->
+          <div class="store-card">
+            <div class="store-card__badge">Đà Nẵng • Trạm Mega Mart</div>
+            <h4>EcoHub Mega Mart Đà Nẵng (Trạm Trải Nghiệm 03)</h4>
+            
+            <div class="store-info-list">
+              <p class="store-info-item">
+                <span class="store-icon store-icon--pin" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                    <circle cx="12" cy="9" r="2.5"/>
+                  </svg>
+                </span>
+                <span><b>TTMM Mega Market Đà Nẵng</b>, Đường Cách Mạng Tháng 8, P. Khuê Trung, Q. Cẩm Lệ <small style="color:var(--muted); display:block;">(Gian hàng Sinh thái Tầng 1)</small></span>
+              </p>
+
+              <p class="store-info-item">
+                <span class="store-icon store-icon--time" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                </span>
+                <span>Giờ mở cửa: <b>08:00 – 22:00</b> (Mở cả tuần & Lễ)</span>
+              </p>
+
+              <p class="store-info-item">
+                <span class="store-icon store-icon--phone" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                  </svg>
+                </span>
+                <span>Hotline: <a href="tel:0900000013" class="store-phone-link">0900 000 013</a></span>
+              </p>
+            </div>
+
+            <div class="store-card__perks">
+              <span>✓ Quầy trải nghiệm trực tiếp chất liệu nhựa PP</span>
+              <span>✓ Điểm tiếp nhận bảo hành 1 đổi 1 nhanh</span>
+              <span>✓ Đóng gói hộp quà tặng doanh nghiệp</span>
+            </div>
+            <button class="btn btn--outline btn--block"
+              onclick="toast('Đang mở bản đồ chỉ đường đến Mega Market Đà Nẵng')">Xem bản đồ chỉ đường</button>
+          </div>
+
+          <!-- TRẠM 4: Ở BÁCH KHOA ĐÀ NẴNG -->
+          <div class="store-card">
+            <div class="store-card__badge">Đà Nẵng • Trạm Bách Khoa</div>
+            <h4>EcoHub Bách Khoa ĐN (Trạm Trải Nghiệm 04)</h4>
+            
+            <div class="store-info-list">
+              <p class="store-info-item">
+                <span class="store-icon store-icon--pin" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                    <circle cx="12" cy="9" r="2.5"/>
+                  </svg>
+                </span>
+                <span><b>54 Nguyễn Lương Bằng</b>, P. Hòa Khánh Bắc, Q. Liên Chiểu, TP. Đà Nẵng <small style="color:var(--pink); display:block; font-weight:700;">(Đối diện Cổng chính ĐH Bách Khoa)</small></span>
+              </p>
+
+              <p class="store-info-item">
+                <span class="store-icon store-icon--time" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                </span>
+                <span>Giờ mở cửa: <b>08:00 – 21:00</b> (Thứ 2 – CN)</span>
+              </p>
+
+              <p class="store-info-item">
+                <span class="store-icon store-icon--phone" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                  </svg>
+                </span>
+                <span>Hotline: <a href="tel:0900000014" class="store-phone-link">0900 000 014</a></span>
+              </p>
+            </div>
+
+            <div class="store-card__perks">
+              <span>✓ Trạm sạc pin năng lượng mặt trời</span>
+              <span>✓ Điểm nhận hàng đặt trước hỏa tốc 2h</span>
+              <span>✓ Trạm thu gom & đo lường rác nhựa học đường</span>
+            </div>
+            <button class="btn btn--outline btn--block"
+              onclick="toast('Đang mở bản đồ chỉ đường đến 54 Nguyễn Lương Bằng, Bách Khoa Đà Nẵng')">Xem bản đồ chỉ đường</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUNG TÂM BẢO HÀNH & TRA CỨU ĐIỆN TỬ -->
+    <section class="warranty-section" id="bao-hanh">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">Hỗ trợ khách hàng chu đáo</span>
+          <h2>Trung tâm Bảo hành & Tra cứu EcoCare</h2>
+          <p>Bảo hành chính hãng 6 tháng cho mọi sản phẩm, 1 đổi 1 trong 7 ngày đối với các lỗi liên quan đến nắp hoặc
+            gioăng rò rỉ.</p>
+        </div>
+
+        <div class="warranty__box">
+          <div class="warranty__tabs" id="warrantyTabs">
+            <button class="warranty__tab is-active" data-wtab="lookup">🔍 Tra cứu bảo hành trực tuyến</button>
+            <button class="warranty__tab" data-wtab="activate">⚡ Kích hoạt bảo hành điện tử</button>
+            <button class="warranty__tab" data-wtab="policy">📜 Chính sách & Cam kết</button>
+          </div>
+
+          <!-- TAB 1: TRA CỨU -->
+          <div class="warranty__pane" id="wtab-lookup">
+            <div class="warranty__form-wrap">
+              <h4>Tra cứu thời hạn & trạng thái bảo hành sản phẩm</h4>
+              <p class="text-muted">Nhập Số điện thoại đặt hàng hoặc Mã đơn hàng của bạn để kiểm tra trực tiếp:</p>
+              <form class="warranty__search-form" id="warrantyLookupForm">
+                <input type="text" id="warrantyInput" placeholder="Ví dụ: EB2026 hoặc 0900000000" required
+                  autocomplete="off">
+                <button type="submit" class="btn btn--primary">Tra cứu ngay</button>
+              </form>
+              <p class="warranty__hint">💡 <i>Gợi ý tra mẫu nhanh: Hãy nhập thử <b>EB2026</b> hoặc <b>0900000000</b> để
+                  xem kết quả mẫu tức thì.</i></p>
+
+              <div class="warranty__result" id="warrantyResult" hidden>
+                <!-- Kết quả hiển thị động qua JS -->
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 2: KÍCH HOẠT BẢO HÀNH -->
+          <div class="warranty__pane" id="wtab-activate" hidden>
+            <div class="warranty__form-wrap">
+              <h4>Đăng ký kích hoạt bảo hành điện tử EcoBox</h4>
+              <p class="text-muted">Quý khách vui lòng điền thông tin bên dưới để lưu bảo hành điện tử chính hãng 6
+                tháng:</p>
+              <form class="warranty__activate-form" id="warrantyActivateForm">
+                <div class="form-row">
+                  <div class="form-col">
+                    <label>Họ và tên của bạn (*)</label>
+                    <input type="text" placeholder="Nguyễn Văn A" required>
+                  </div>
+                  <div class="form-col">
+                    <label>Số điện thoại (*)</label>
+                    <input type="tel" placeholder="09xxxxxxxx" required>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-col">
+                    <label>Tên sản phẩm hoặc Mã tem (*)</label>
+                    <input type="text" placeholder="Ví dụ: Hộp cơm 3 ngăn Lunch hoặc mã tem trên hộp" required>
+                  </div>
+                  <div class="form-col">
+                    <label>Nơi mua hàng</label>
+                    <select class="select-box">
+                      <option>Website chính thức EcoBox</option>
+                      <option>EcoHub 08 Hà Văn Tính (Liên Chiểu)</option>
+                      <option>EcoHub ĐH Sư Phạm Đà Nẵng</option>
+                      <option>EcoHub Mega Mart Đà Nẵng</option>
+                      <option>EcoHub ĐH Bách Khoa Đà Nẵng</option>
+                      <option>Sự kiện xanh sinh viên</option>
+                    </select>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn--primary">Xác nhận kích hoạt</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- TAB 3: CHÍNH SÁCH -->
+          <div class="warranty__pane" id="wtab-policy" hidden>
+            <div class="policy-grid">
+              <div class="policy-card">
+                <div class="policy-card__icon">🔁</div>
+                <h4>Đổi mới 1 - 1 trong 7 ngày</h4>
+                <p>Đổi mới ngay lập tức nếu sản phẩm gặp hiện tượng rỉ nước, nắp không khít hoặc biến dạng do khâu sản
+                  xuất đóng gói.</p>
+              </div>
+              <div class="policy-card">
+                <div class="policy-card__icon">🛡️</div>
+                <h4>Bảo hành chính hãng 6 tháng</h4>
+                <p>Hỗ trợ thay mới miễn phí gioăng cao su silicone và khóa gài nếu bị giãn hoặc hỏng hóc trong quá trình
+                  sử dụng thường ngày.</p>
+              </div>
+              <div class="policy-card">
+                <div class="policy-card__icon">♻️</div>
+                <h4>Chương trình Thu cũ - Đổi mới</h4>
+                <p>Khi hộp cũ không còn nhu cầu sử dụng, mang đến các trạm EcoHub để nhận ưu đãi giảm 20% khi mua hộp
+                  thế hệ mới.</p>
+              </div>
+              <div class="policy-card">
+                <div class="policy-card__icon">🚚</div>
+                <h4>Miễn phí gửi trả bảo hành</h4>
+                <p>EcoBox chịu 100% cước vận chuyển 2 chiều đối với tất cả đơn đổi trả hoặc gửi bảo hành trên toàn quốc.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIN TỨC & BÀI VIẾT NỔI BẬT -->
+    <section class="news" id="tin-tuc">
+      <div class="container">
+        <div class="collection__head">
+          <div>
+            <h2>Tin tức & Lối sống xanh</h2>
+            <p class="collection__count-text">Khám phá các mẹo bảo quản đồ ăn và thông tin sống xanh mỗi ngày</p>
+          </div>
+          <button class="link-more" id="viewAllNewsBtn">Xem tất cả bài viết →</button>
+        </div>
+        <div class="news__grid" id="newsGrid">
+          <!-- Các bài viết sẽ được render qua JS kèm sự kiện click mở Modal đọc tin -->
+        </div>
+      </div>
+    </section>
+
+    <!-- QUÀ TẶNG DOANH NGHIỆP -->
+    <section class="gift" id="qua-tang">
+      <div class="container gift__inner">
+        <div>
+          <h2>Quà tặng doanh nghiệp & Trường học</h2>
+          <p>Nhận in khắc logo theo yêu cầu từ 50 bộ trở lên, thiết kế hộp quà tinh tế, lan tỏa thông điệp bảo vệ môi
+            trường.</p>
+        </div>
+        <form class="newsletter" id="newsletterForm">
+          <input type="email" placeholder="Nhập địa chỉ email của bạn..." required>
+          <button class="btn btn--primary" type="submit">Nhận tư vấn & Báo giá</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- TIÊU CHUẨN CHẤT LƯỢNG -->
+    <section class="certs">
+      <div class="container">
+        <h3>TIÊU CHUẨN & CAM KẾT CHẤT LƯỢNG VẬT LIỆU</h3>
+        <div class="certs__list">
+          <span>🍽️ Chuẩn an toàn thực phẩm</span>
+          <span>🚫 Không chứa BPA (BPA-Free)</span>
+          <span>♻️ Nhựa PP số 5 tái chế 100%</span>
+          <span>🛡️ Bảo hành 6 tháng toàn diện</span>
+          <span>🚚 Đổi mới miễn phí 7 ngày</span>
+          <span>🔥 Chịu nhiệt -20°C đến 120°C</span>
+        </div>
+        <p class="note">Lưu ý: Website được xây dựng phục vụ đồ án học tập nhóm môn học, các thông tin bán hàng mang
+          tính chất minh họa dự án sinh viên.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- CHÂN TRANG FOOTER (PHONG CÁCH SÁNG NHẬT BẢN - INOCHI) -->
+  <footer class="footer" id="lien-he">
+    <div class="container footer__grid">
+      <!-- CỘT 1: THƯƠNG HIỆU & CHỨNG NHẬN -->
+      <div class="footer__brand-col">
+        <a href="#" class="logo logo--footer" aria-label="EcoBox">
+          <svg viewBox="0 0 40 40" width="34" height="34" aria-hidden="true">
+            <rect x="4" y="12" width="32" height="22" rx="6" fill="#16396b" />
+            <rect x="2" y="8" width="36" height="8" rx="4" fill="#5aa9d6" />
+            <path d="M20 29c-4-1-6-4-5-8 4 0 7 2 7 6 0 1 0 1-2 2z" fill="#fff" />
+          </svg>
+          <span>Eco<b>Box</b></span>
+        </a>
+        <p class="footer__about">Thương hiệu hộp đựng thức ăn tái chế do nhóm sinh viên tự thiết kế – Tiên phong lối
+          sống xanh, an toàn & tiện lợi cho mọi gia đình.</p>
+
+        <div class="footer__bocongthuong">
+          <div class="bct-badge">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="#0080ff">
+              <path
+                d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+            </svg>
+            <div>
+              <small>ĐÃ THÔNG BÁO</small>
+              <b>BỘ CÔNG THƯƠNG</b>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CỘT 2: VỀ ECOBOX -->
+      <div>
+        <h5>Về EcoBox</h5>
+        <ul>
+          <li><a href="#cau-chuyen">Câu chuyện thương hiệu</a></li>
+          <li><a href="#song-xanh">Giải pháp sống xanh</a></li>
+          <li><a href="#cua-hang">Hệ thống trạm trải nghiệm</a></li>
+          <li><a href="#tin-tuc">Tin tức & Sự kiện</a></li>
+          <li><a href="#bao-hanh">Chính sách bảo hành</a></li>
+          <li><a href="javascript:void(0)" onclick="toast('Chính sách bảo mật thông tin chuẩn EcoBox')">Chính sách bảo
+              mật</a></li>
+          <li><a href="javascript:void(0)" onclick="toast('Điều khoản dịch vụ đồ án sinh viên')">Điều khoản dịch vụ</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- CỘT 3: SẢN PHẨM -->
+      <div>
+        <h5>Sản phẩm EcoBox</h5>
+        <ul>
+          <li><a href="#san-pham" data-filter="hop-com">Hộp cơm trưa văn phòng</a></li>
+          <li><a href="#san-pham" data-filter="tru-dong">Hộp trữ đông & làm đá</a></li>
+          <li><a href="#san-pham" data-filter="mang-di">Hộp & bình mang đi</a></li>
+          <li><a href="#san-pham" data-filter="combo">Combo quà tặng tiết kiệm</a></li>
+          <li><a href="#sale">Sản phẩm khuyến mãi (SALE)</a></li>
+          <li><a href="#san-pham" data-filter="all">Thiết bị mang đi On-The-Go</a></li>
+        </ul>
+      </div>
+
+      <!-- CỘT 4: LIÊN HỆ - HỖ TRỢ (CÓ ICON VỊ TRÍ, ĐIỆN THOẠI, EMAIL) -->
+      <div>
+        <h5>Liên hệ - Hỗ trợ</h5>
+        <ul class="contact-list">
+          <li class="contact-item">
+            <span class="contact-icon contact-icon--pin">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                <circle cx="12" cy="9" r="2.5"/>
+              </svg>
+            </span>
+            <div>
+              <b>Trụ sở & Showroom chính tại Đà Nẵng:</b>
+              <p>Số 08 Hà Văn Tính, P. Hòa Khánh Nam, Q. Liên Chiểu, TP. Đà Nẵng (Gần Trường ĐH Sư Phạm)</p>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <span class="contact-icon contact-icon--pin">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                <circle cx="12" cy="9" r="2.5"/>
+              </svg>
+            </span>
+            <div>
+              <b>Trạm tiếp nhận Sư phạm & Bách khoa:</b>
+              <p>459 Tôn Đức Thắng & 54 Nguyễn Lương Bằng, Q. Liên Chiểu, TP. Đà Nẵng</p>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <span class="contact-icon contact-icon--phone">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+              </svg>
+            </span>
+            <div>
+              <b>Hotline tư vấn & đặt hàng:</b>
+              <p><a href="tel:0900000000" class="contact-highlight">0900 000 000</a> (08:00 - 22:00)</p>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <span class="contact-icon contact-icon--mail">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </span>
+            <div>
+              <b>Email phản hồi:</b>
+              <p><a href="mailto:hello@ecobox-project.vn">hello@ecobox-project.vn</a></p>
+            </div>
+          </li>
+        </ul>
+
+        <!-- THEO DÕI ECOBOX TẠI ĐÂY (ICON CHÍNH XÁC CỦA TIKTOK, FACEBOOK, INSTAGRAM, ZALO) -->
+        <div class="footer__socials-wrap">
+          <span class="footer__social-title">Theo dõi EcoBox tại đây:</span>
+          <div class="socials">
+            <!-- TIKTOK CHÍNH HÃNG SVG -->
+            <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer"
+              class="social-btn social-btn--tiktok" aria-label="TikTok" title="Theo dõi trên TikTok">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path
+                  d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.34 0 .67.06.97.16v-3.53a6.38 6.38 0 00-.97-.08A6.34 6.34 0 003.15 15.3a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V8.58a8.28 8.28 0 004.9 1.58V6.69h-1.14z" />
+              </svg>
+            </a>
+
+            <!-- FACEBOOK CHÍNH HÃNG SVG -->
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"
+              class="social-btn social-btn--fb" aria-label="Facebook" title="Trang Facebook EcoBox">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </a>
+
+            <!-- INSTAGRAM CHÍNH HÃNG SVG -->
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"
+              class="social-btn social-btn--ig" aria-label="Instagram" title="Instagram EcoBox">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </a>
+
+            <!-- ZALO CHÍNH HÃNG SVG -->
+            <a href="https://zalo.me" target="_blank" rel="noopener noreferrer" class="social-btn social-btn--zalo"
+              aria-label="Zalo" title="Liên hệ qua Zalo Official">
+              <svg viewBox="0 0 48 48" width="20" height="20" fill="currentColor">
+                <path
+                  d="M24 4C12.95 4 4 12.06 4 22c0 5.67 2.92 10.74 7.57 14.18l-1.92 6.94a1 1 0 001.38 1.15l7.94-3.95c1.61.44 3.3.68 5.03.68 11.05 0 20-8.06 20-18S35.05 4 24 4zm7.88 23.36h-8.04l6.06-7.38a1 1 0 00-.78-1.64h-7.7a1 1 0 000 2h5.5l-6.06 7.38a1 1 0 00.78 1.64h8.24a1 1 0 100-2z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DÒNG BẢN QUYỀN ĐÁY FOOTER (NỀN TRẮNG SÁNG) -->
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <div>
+          <b>Bản quyền thuộc về © Nhóm 14 – Đồ án Phát triển Sản phẩm Sinh thái EcoBox Đà Nẵng</b><br>
+          <span style="color:var(--muted)">Trụ sở chính: Số 08 Hà Văn Tính, P. Hòa Khánh Nam, Liên Chiểu, Đà Nẵng (Gần ĐH Sư Phạm) | Hotline:
+            0900 000 000 | Email: cskh@ecobox.vn</span>
+        </div>
+        <div class="footer__bottom-tags">
+          <span>🌿 Chuẩn sống xanh Inochi Style</span>
+          <span>♻️ 100% Nhựa tái chế an toàn</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- THANH ĐIỀU HƯỚNG NHANH CHO MOBILE (BOTTOM APP BAR) -->
+  <div class="bottom-bar">
+    <a href="#hero" class="bottom-bar__item is-active" id="bnavHome">
+      <span class="bottom-bar__icon">🏠</span>
+      <span class="bottom-bar__label">Trang chủ</span>
+    </a>
+    <a href="#san-pham" class="bottom-bar__item" id="bnavProducts">
+      <span class="bottom-bar__icon">🍱</span>
+      <span class="bottom-bar__label">Sản phẩm</span>
+    </a>
+    <button class="bottom-bar__item" id="bnavWishlist">
+      <span class="bottom-bar__icon">❤️</span>
+      <span class="bottom-bar__label">Yêu thích</span>
+      <span class="bottom-bar__badge" id="bnavWishCount">0</span>
+    </button>
+    <a href="#bao-hanh" class="bottom-bar__item" id="bnavWarranty">
+      <span class="bottom-bar__icon">🔍</span>
+      <span class="bottom-bar__label">Tra cứu</span>
+    </a>
+    <button class="bottom-bar__item" id="bnavCart">
+      <span class="bottom-bar__icon">🛒</span>
+      <span class="bottom-bar__label">Giỏ hàng</span>
+      <span class="bottom-bar__badge" id="bnavCartCount">0</span>
+    </button>
+  </div>
+
+  <!-- CỤM NÚT NỔI LIÊN HỆ & FACEBOOK MESSENGER (CHUẨN HÌNH 2 & 3) -->
+  <div class="float-contact" id="floatContact">
+    <ul id="floatMenu">
+      <li>
+        <a href="tel:0900000000" class="float-item float-item--phone">
+          <span class="float-item__icon">📞</span>
+          <span>Gọi Hotline: <b>0900 000 000</b></span>
+        </a>
+      </li>
+      <li>
+        <a href="https://m.me" target="_blank" rel="noopener noreferrer" class="float-item float-item--messenger">
+          <span class="float-item__icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="url(#floatMsgGrad)">
+              <defs>
+                <linearGradient id="floatMsgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#00b2ff" />
+                  <stop offset="100%" stop-color="#006aff" />
+                </linearGradient>
+              </defs>
+              <path
+                d="M12 2C6.477 2 2 6.145 2 11.258c0 2.908 1.45 5.508 3.723 7.195V22l3.414-1.874c.907.251 1.87.387 2.863.387 5.523 0 10-4.145 10-9.255C22 6.145 17.523 2 12 2zm1.047 12.438l-2.672-2.852-5.215 2.852 5.738-6.094 2.738 2.852 5.149-2.852-5.738 6.094z" />
+            </svg>
+          </span>
+          <span>Chat Facebook Messenger</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://zalo.me" target="_blank" rel="noopener noreferrer" class="float-item float-item--zalo">
+          <span class="float-item__icon">💬</span>
+          <span>Tư vấn nhanh qua Zalo</span>
+        </a>
+      </li>
+    </ul>
+
+    <!-- NÚT NỔI CHÍNH: ICON MESSENGER CHUẨN XANH GRADIENT -->
+    <button id="floatBtn" class="messenger-float-btn" aria-label="Nhắn tin Messenger cho EcoBox"
+      title="Chat với EcoBox qua Messenger">
+      <svg viewBox="0 0 36 36" width="36" height="36">
+        <defs>
+          <linearGradient id="msgrGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#006aff" />
+            <stop offset="50%" stop-color="#0084ff" />
+            <stop offset="100%" stop-color="#00c6ff" />
+          </linearGradient>
+        </defs>
+        <!-- Nền tròn gradient xanh chuẩn Facebook Messenger -->
+        <circle cx="18" cy="18" r="18" fill="url(#msgrGrad)" />
+        <!-- Biểu tượng tia sét trắng đặc trưng của Messenger -->
+        <path
+          d="M18 6C11.373 6 6 10.974 6 17.108c0 3.49 1.74 6.609 4.468 8.634V29.5l3.962-2.174c1.127.312 2.324.482 3.57.482 6.627 0 12-4.974 12-11.108C30 10.974 24.627 6 18 6zm1.256 14.926l-3.206-3.422-6.258 3.422 6.886-7.313 3.286 3.422 6.178-3.422-6.886 7.313z"
+          fill="#ffffff" />
+      </svg>
+      <span class="messenger-pulse"></span>
+    </button>
+  </div>
+  <button class="to-top" id="toTop" aria-label="Cuộn lên đầu trang">↑</button>
+
+  <!-- LỚP PHỦ MỜ OVERLAY -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- DRAWER GIỎ HÀNG -->
+  <aside class="drawer" id="cartDrawer" aria-hidden="true">
+    <div class="drawer__head">
+      <h3>Giỏ hàng của bạn (<span id="drawerCount">0</span> món)</h3>
+      <button class="icon-btn" id="closeCart" aria-label="Đóng giỏ hàng">✕</button>
+    </div>
+    <div class="ship">
+      <p id="shipMsg">Bạn cần mua thêm 500.000₫ để được miễn phí vận chuyển</p>
+      <div class="ship__bar">
+        <div id="shipFill"></div>
+      </div>
+    </div>
+    <div class="drawer__body" id="cartItems"></div>
+    <div class="drawer__reco">
+      <h4>Gợi ý thêm vào giỏ</h4>
+      <div class="reco" id="recoList"></div>
+    </div>
+    <div class="drawer__foot">
+      <div class="subtotal">
+        <span>Tạm tính:</span>
+        <b id="subtotal">0₫</b>
+      </div>
+      <button class="btn btn--primary btn--block" id="checkoutBtn">Tiến hành thanh toán ngay</button>
+    </div>
+  </aside>
+
+  <!-- DRAWER DANH SÁCH YÊU THÍCH (WISHLIST) -->
+  <aside class="drawer drawer--wishlist" id="wishlistDrawer" aria-hidden="true">
+    <div class="drawer__head">
+      <h3>Sản phẩm yêu thích (<span id="wishDrawerCount">0</span>)</h3>
+      <button class="icon-btn" id="closeWishlist" aria-label="Đóng yêu thích">✕</button>
+    </div>
+    <div class="drawer__body" id="wishlistItems"></div>
+    <div class="drawer__foot">
+      <button class="btn btn--primary btn--block" id="addAllWishlistBtn">Thêm tất cả vào giỏ hàng</button>
+    </div>
+  </aside>
+
+  <!-- MODAL ĐĂNG NHẬP / QUÊN MẬT KHẨU -->
+  <div class="modal" id="loginModal" aria-hidden="true">
+    <div class="modal__box">
+      <button class="icon-btn modal__close" id="closeLogin" aria-label="Đóng cửa sổ">✕</button>
+      <div id="loginView">
+        <h3>Đăng nhập tài khoản</h3>
+        <p>Nhập email và mật khẩu của bạn để xem lịch sử mua hàng:</p>
+        <form id="loginForm">
+          <input type="email" placeholder="Email của bạn" required>
+          <input type="password" placeholder="Mật khẩu" required>
+          <button class="btn btn--primary btn--block" type="submit">Đăng nhập ngay</button>
+        </form>
+        <p class="modal__links">Khách hàng mới? <a href="javascript:void(0)"
+            onclick="toast('Tính năng tạo tài khoản đang trong bản thử nghiệm đồ án')">Tạo tài khoản mới</a><br>
+          <a href="#" id="toForgot">Quên mật khẩu?</a>
+        </p>
+      </div>
+      <div id="forgotView" hidden>
+        <h3>Khôi phục mật khẩu</h3>
+        <p>Nhập địa chỉ email đăng ký để nhận mã xác minh:</p>
+        <form id="forgotForm">
+          <input type="email" placeholder="Email của bạn" required>
+          <button class="btn btn--primary btn--block" type="submit">Gửi liên kết khôi phục</button>
+        </form>
+        <p class="modal__links">Bạn đã nhớ mật khẩu? <a href="#" id="toLogin">Trở về đăng nhập</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL XEM NHANH SẢN PHẨM (QUICK VIEW) -->
+  <div class="modal" id="quickviewModal" aria-hidden="true">
+    <div class="modal__box modal__box--lg">
+      <button class="icon-btn modal__close" id="closeQuickview" aria-label="Đóng">✕</button>
+      <div class="quickview__layout" id="quickviewContent">
+        <!-- Nội dung chi tiết sản phẩm được tạo động qua JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL THANH TOÁN (CHECKOUT) -->
+  <div class="modal" id="checkoutModal" aria-hidden="true">
+    <div class="modal__box modal__box--lg">
+      <button class="icon-btn modal__close" id="closeCheckout" aria-label="Đóng">✕</button>
+      <div class="checkout__layout">
+        <!-- Form nhập thông tin -->
+        <div class="checkout__form-col">
+          <h3>Thông tin giao hàng</h3>
+          <form id="orderForm">
+            <div class="form-group">
+              <label>Họ và tên người nhận (*)</label>
+              <input type="text" id="orderName" placeholder="Ví dụ: Nguyễn Văn An" required>
+            </div>
+            <div class="form-group">
+              <label>Số điện thoại liên hệ (*)</label>
+              <input type="tel" id="orderPhone" placeholder="Ví dụ: 0912 345 678" required>
+            </div>
+            <div class="form-group">
+              <label>Địa chỉ nhận hàng chi tiết (*)</label>
+              <input type="text" id="orderAddress" placeholder="Số nhà, tên đường, phường/xã, quận/huyện, tỉnh/thành"
+                required>
+            </div>
+            <div class="form-group">
+              <label>Ghi chú cho shipper</label>
+              <input type="text" id="orderNote" placeholder="Ví dụ: Giao giờ hành chính, gọi trước khi đến...">
+            </div>
+
+            <div class="form-group">
+              <label>Phương thức thanh toán:</label>
+              <div class="payment-options">
+                <label class="payment-option">
+                  <input type="radio" name="paymentMethod" value="cod" checked>
+                  <span>💵 Thanh toán tiền mặt khi nhận hàng (COD)</span>
+                </label>
+                <label class="payment-option">
+                  <input type="radio" name="paymentMethod" value="banking">
+                  <span>📱 Quét mã VietQR / Chuyển khoản ngân hàng</span>
+                </label>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--block" id="submitOrderBtn">Xác nhận đặt đơn hàng</button>
+          </form>
+        </div>
+
+        <!-- Tóm tắt đơn hàng -->
+        <div class="checkout__summary-col">
+          <h3>Tóm tắt đơn hàng</h3>
+          <div class="checkout__items" id="checkoutItemsList"></div>
+
+          <div class="checkout__pricing">
+            <div class="checkout__row">
+              <span>Tạm tính:</span>
+              <span id="checkoutSubtotal">0₫</span>
+            </div>
+            <div class="checkout__row">
+              <span>Phí vận chuyển:</span>
+              <span id="checkoutShipFee">30.000₫</span>
+            </div>
+            <div class="checkout__row checkout__row--total">
+              <span>Tổng thanh toán:</span>
+              <span id="checkoutTotal">0₫</span>
+            </div>
+          </div>
+          <div class="checkout__guarantee">
+            🔒 Được kiểm tra hàng trước khi nhận. Đổi mới 100% trong 7 ngày nếu lỗi!
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL ĐỌC BÀI VIẾT TIN TỨC CHI TIẾT -->
+  <div class="modal" id="newsModal" aria-hidden="true">
+    <div class="modal__box modal__box--lg">
+      <button class="icon-btn modal__close" id="closeNews" aria-label="Đóng bài viết">✕</button>
+      <article class="news-reader" id="newsReaderContent">
+        <!-- Chi tiết bài viết sẽ được đưa vào đây qua JS -->
+      </article>
+    </div>
+  </div>
+
+  <!-- THÔNG BÁO TOAST POPUP -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
