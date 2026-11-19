@@ -55,6 +55,97 @@ const CAT_NAMES = {
 const NEWS_ARTICLES = [
   {
     id: 1,
+    date: '05/12/2026',
+    title: 'BÀI VIẾT CHUYÊN ĐỀ PR: Liệu hộp thức ăn dùng nhiều lần có thực sự sạch? Giải mã quy trình vệ sinh chuẩn ISO đằng sau chiếc hộp xanh REBOX',
+    desc: 'Trong bối cảnh sống xanh là xu hướng, rào cản lớn nhất của sinh viên là: “Hộp đã qua tay người khác liệu có an toàn vệ sinh?”. REBOX minh bạch quy trình vệ sinh khép kín và kiểm định định kỳ chuẩn TCVN ISO/IEC 17025...',
+    readTime: '5 phút đọc',
+    author: 'Trịnh Trương Ái Mỹ – Phụ trách Dự án REBOX (Nhóm 6 ĐH Sư phạm – ĐH Đà Nẵng)',
+    tag: 'Chuyên đề PR',
+    badge: 'CHUYÊN ĐỀ ĐẶC BIỆT',
+    content: `
+      <div class="news-reader__press-head">
+        <div style="text-align:center; margin-bottom:20px;">
+          <h3 style="color:var(--navy); font-size:16px; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.8px;">BÀI VIẾT CHUYÊN ĐỀ PR: DỰ ÁN REBOX</h3>
+          <h2 style="color:var(--green-sage); font-size:22px; line-height:1.4; font-weight:800; max-width:760px; margin:0 auto;">Liệu hộp thức ăn dùng nhiều lần có thực sự sạch? Giải mã quy trình vệ sinh chuẩn ISO đằng sau chiếc hộp xanh REBOX</h2>
+          <p style="font-style:italic; color:var(--muted); margin-top:8px; font-size:13.5px;">Đà Nẵng, tháng 12 năm 2026 – Ban Truyền thông Dự án REBOX</p>
+        </div>
+      </div>
+
+      <div class="news-reader__callout" style="border-left: 4px solid var(--green-sage); background: #f4fbf7; padding: 16px 20px; font-style: italic; line-height: 1.75; margin-bottom: 22px;">
+        Trong bối cảnh mà sống xanh đang là xu hướng và giới trẻ ngày càng ưa chuộng những sản phẩm góp phần bảo vệ môi trường thì việc thay thế hộp xốp đựng cơm dùng một lần bằng hộp tái sử dụng là mong muốn của nhiều bạn trẻ đặc biệt là sinh viên – những người ưu tiên sự tiện lợi trong các bữa ăn hằng ngày. Tuy nhiên, rào cản lớn nhất khiến không ít bạn ngần ngại chính là câu hỏi: <b>“Hộp đã qua tay người khác liệu có đảm bảo an toàn vệ sinh?”</b>
+      </div>
+
+      <h3 style="color:var(--navy); font-size:17px; margin:24px 0 12px; text-transform:uppercase; font-weight:700;">
+        1. KHI NHỮNG CHIẾC HỘP ĐÃ QUA SỬ DỤNG TRỞ THÀNH RÀO CẢN CHO LỐI SỐNG XANH
+      </h3>
+
+      <p>Sống xanh đang trở thành xu hướng và được nhiều sinh viên quan tâm và ủng hộ, thế nhưng, giữa mong muốn bảo vệ môi trường và hành động thực tế vẫn tồn tại một khoảng cách đáng kể. Đối với sinh viên, chiếc hộp không chỉ cần tiện lợi mà còn phải đảm bảo an toàn vệ sinh vì thức ăn đựng trong hộp sẽ trực tiếp đưa vào cơ thể, ảnh hưởng trực tiếp đến họ.</p>
+
+      <p>Khảo sát thực tế trên <b>110 sinh viên Trường Đại học Sư phạm - Đại học Đà Nẵng</b> cho thấy, <b>yếu tố vệ sinh và an toàn thực phẩm là tiêu chí hàng đầu (72,7%)</b> được các bạn cân nhắc khi chọn bao bì đựng đồ ăn. Có thể thấy, vấn đề không chỉ là sinh viên có đồng tình với lối sống xanh hay không mà còn là mức độ tin tưởng của họ vào mô hình như thế nào.</p>
+
+      <p>Ngoài ra, có tới <b>69,1% sinh viên đồng tình với ý kiến công khai quy trình vệ sinh một cách minh bạch có kiểm chứng</b> cho thấy niềm tin của sinh viên không chỉ đến từ những cam kết an toàn vệ sinh, mà còn phụ thuộc vào khả năng kiểm chứng trực tiếp về độ an toàn của hộp. Điều này cho thấy việc minh bạch quy trình vệ sinh sẽ là chìa khoá để REBOX tháo gỡ những thắc mắc, rào cản tâm lí từ đó củng cố niềm tin và thúc đẩy sinh viên chuyển từ nhận thức sống xanh sang hành động thực tế.</p>
+
+      <h3 style="color:var(--navy); font-size:17px; margin:28px 0 14px; text-transform:uppercase; font-weight:700;">
+        2. GIẢI MÃ QUY TRÌNH VỆ SINH HỘP REBOX
+      </h3>
+
+      <p>Để hoá giải những băn khoăn của sinh viên và minh bạch hóa toàn bộ công đoạn làm sạch, REBOX chính thức công khai quy trình vệ sinh kiểm soát an toàn nghiêm ngặt thông qua ấn phẩm đồ họa chi tiết dưới đây:</p>
+
+      <!-- HÌNH ẢNH INFOGRAPHIC QUY TRÌNH VỆ SINH REBOX (KHÔNG GHI CÁC BƯỚC BẰNG CHỮ THEO ĐÚNG YÊU CẦU) -->
+      <div class="pr-infographic-box" style="margin:22px 0 24px; text-align:center;">
+        <div style="cursor:pointer; display:inline-block; max-width:100%; border-radius:16px; overflow:hidden; box-shadow:0 8px 28px rgba(45,102,69,0.15); border:2px solid #b7e0c8; transition:transform 0.25s ease;"
+             onclick="openPosterModal('images/poster/quytrinh_vesinh.jpg', 'Infographic Quy Trình Vệ Sinh REBOX – An Toàn, Kiểm Soát Chặt Chẽ, Minh Bạch Từng Công Đoạn')"
+             title="Nhấn để xem hình ảnh phóng to">
+          <img src="images/poster/quytrinh_vesinh.jpg" 
+               alt="Infographic Quy trình vệ sinh hộp REBOX khép kín 4 công đoạn" 
+               style="display:block; width:100%; max-width:620px; height:auto; margin:0 auto; border-radius:14px;">
+        </div>
+        <p style="font-size:13.5px; color:#2d6645; margin-top:10px; font-weight:600; font-style:italic;">
+          🔍 (Nhấn trực tiếp vào ảnh trên để phóng to chi tiết Infographic Quy trình vệ sinh REBOX)
+        </p>
+      </div>
+
+      <p>Trong mô hình REBOX, mỗi hộp có một <b>mã QR và tem niêm phong riêng</b> nhằm hỗ trợ cung cấp thông tin liên quan đến quá trình sử dụng và vệ sinh. Sinh viên chỉ cần dùng điện thoại quét mã là có thể kiểm tra chi tiết: phương pháp làm sạch, thời gian vệ sinh gần nhất, nơi bảo quản và lịch sử vận hành của hộp. Nếu tem bị rách hoặc có dấu hiệu bất thường, sinh viên có thể yêu cầu đổi hộp trước khi sử dụng.</p>
+
+      <h3 style="color:var(--navy); font-size:17px; margin:28px 0 14px; text-transform:uppercase; font-weight:700;">
+        3. ISO/IEC 17025: KHI NIỀM TIN CẦN ĐƯỢC BẢO CHỨNG BẰNG KIỂM NGHIỆM
+      </h3>
+
+      <p>Việc vệ sinh hộp sau mỗi lần sử dụng là điều kiện cần, nhưng để kiểm tra toàn diện chất lượng hộp nhằm duy trì sự an tâm của sinh viên, REBOX còn thực hiện <b>kiểm định hộp định kì mỗi tuần một lần</b> tại <b>Trung tâm Ứng dụng khoa học công nghệ và tiêu chuẩn đo lường chất lượng</b>, tổ chức khoa học và công nghệ trực thuộc cơ quan Khoa học và Công nghệ thành phố Đà Nẵng, địa chỉ <b>1000/1 Tôn Đản, phường An Khê, thành phố Đà Nẵng</b>.</p>
+
+      <p>Tại đây, các mẫu hộp được gửi đến phòng kiểm nghiệm được chỉ định hoặc phòng thử nghiệm được công nhận phù hợp với <b>TCVN ISO/IEC 17025:2017</b> – tiêu chuẩn quy định các yêu cầu chung về năng lực, tính khách quan và hoạt động nhất quán của phòng thử nghiệm và hiệu chuẩn. Việc lựa chọn đơn vị kiểm nghiệm đáp ứng tiêu chuẩn này góp phần đảm bảo kết quả đánh giá được thực hiện theo những yêu cầu chuyên môn và quy trình kiểm soát chất lượng phù hợp.</p>
+
+      <p>Đặc biệt, kết quả kiểm nghiệm được lưu trữ thành hồ sơ dữ liệu, tạo cơ sở để REBOX theo dõi chất lượng hộp trong quá trình lưu hành, đối chiếu các kết quả giữa những lần kiểm tra và xử lý khi phát sinh vấn đề. Trong trường hợp phát hiện dấu hiệu không đáp ứng yêu cầu, lô hộp hoặc những hộp có liên quan sẽ được tạm thời đình chỉ đưa vào sử dụng để phục vụ việc điều tra nguyên nhân và triển khai biện pháp khắc phục.</p>
+
+      <p>Cơ chế kiểm nghiệm định kỳ và kiểm soát chất lượng này cho thấy REBOX không chỉ hướng đến việc làm sạch hộp sau mỗi lần sử dụng, mà còn đặt trọng tâm vào khả năng duy trì chất lượng trong suốt vòng đời sản phẩm.</p>
+
+      <h3 style="color:var(--navy); font-size:17px; margin:28px 0 14px; text-transform:uppercase; font-weight:700;">
+        4. AN TOÀN VỆ SINH KHÔNG PHẢI LỜI HỨA, MÀ LÀ MỘT QUY TRÌNH CẦN ĐƯỢC DUY TRÌ
+      </h3>
+
+      <p>Việc sinh viên lựa chọn sống xanh thông qua REBOX cho thấy họ nhận thức được trách nhiệm của mình đối với môi trường. Nhưng để biến hành động nhất thời thành thói quen bền vững lâu dài, sinh viên cần được thuyết phục bởi những quy trình rõ ràng, kĩ càng, minh bạch thay vì chỉ là những lời cam kết an toàn đơn thuần.</p>
+
+      <p>Lựa chọn hộp dùng nhiều lần không nên đồng nghĩa với việc đánh đổi sự yên tâm trong mỗi bữa ăn. Ngược lại, chính sự an toàn là điều kiện hàng đầu để xây dựng một mô hình bền vững. REBOX giải quyết bài toán này bằng hệ thống hộp tái sử dụng, trạm thu hồi và quy trình làm sạch tập trung. Từ việc trả hộp sau bữa ăn đến quá trình vệ sinh và đưa hộp trở lại hệ thống, mỗi công đoạn đều đóng vai trò trong việc duy trì vòng tuần hoàn của sản phẩm.</p>
+
+      <p>Một chiếc hộp được sử dụng nhiều lần không chỉ giúp giảm thiểu rác thải, mà còn mở ra cơ hội để mỗi bữa ăn trở thành một hành động có trách nhiệm hơn với môi trường. Và hành trình ấy chỉ thực sự bền vững khi chiếc hộp xanh luôn đi cùng sự minh bạch, an toàn và niềm tin của người sử dụng.</p>
+
+      <div style="margin:24px 0 16px; padding:16px 20px; background:#fffdf0; border:1px solid #fae477; border-radius:12px; text-align:center;">
+        <p style="font-size:16px; font-weight:800; color:var(--green-sage); margin:0; letter-spacing:0.5px;">
+          🌿 REBOX – Hộp gọn gói gọn món ngon, trọn vị sống xanh.
+        </p>
+      </div>
+
+      <div class="news-reader__contact-box" style="background:#f4fbf7; border:1px solid #b7e0c8; border-radius:12px; padding:18px; margin-top:22px;">
+        <h5 style="color:#2d6645; margin-bottom:8px; font-size:15px; font-weight:700;">📞 ĐỂ BIẾT THÊM THÔNG TIN VUI LÒNG LIÊN HỆ:</h5>
+        <p style="margin:4px 0;"><b>Người đại diện phụ trách:</b> Trịnh Trương Ái Mỹ</p>
+        <p style="margin:4px 0;"><b>Hotline Ban Truyền thông:</b> <a href="tel:0374596585" style="color:var(--navy); font-weight:700;">0374 596 585</a> (Mai Thùy Linh)</p>
+        <p style="margin:4px 0;"><b>Email liên hệ:</b> <a href="mailto:Maitlinh209@gmail.com" style="color:var(--navy); font-weight:700;">Maitlinh209@gmail.com</a></p>
+        <p style="margin:4px 0;"><b>Đơn vị nghiên cứu:</b> Đề tài nghiên cứu ứng dụng Nhóm 6 – Khoa Ngữ văn - Truyền thông, Trường ĐH Sư phạm – ĐH Đà Nẵng</p>
+      </div>
+    `
+  },
+  {
+    id: 2,
     date: '01/12/2026',
     title: 'THÔNG CÁO BÁO CHÍ: REBOX Ra Mắt Mô Hình Hộp Đựng Thức Ăn Tái Sử Dụng Tại Trường Đại Học Sư Phạm – Đại Học Đà Nẵng',
     desc: 'Lễ ra mắt chính thức mô hình hộp tuần hoàn và phát động Thử thách số “7 ngày dùng xanh cùng REBOX” từ ngày 12/12 đến 19/12/2026 tại Hội trường Đất Quảng (phòng 202 toà nhà A6)...',
@@ -103,7 +194,7 @@ const NEWS_ARTICLES = [
     `
   },
   {
-    id: 2,
+    id: 3,
     date: '20/12/2026',
     title: 'THÔNG CÁO BÁO CHÍ: REBOX Thông Tin Chính Thức Về Việc Xử Lý Sự Cố Chậm Hoàn Tiền Đặt Cọc Cho Khách Hàng',
     desc: 'Phản hồi minh bạch và trách nhiệm của REBOX liên quan đến sự cố kỹ thuật chưa đồng bộ dữ liệu hoàn cọc 25.000 đồng tại trạm toà B3, cùng chính sách đền bù voucher Phê La & Cơm tấm Bụi...',
@@ -175,7 +266,7 @@ const NEWS_ARTICLES = [
     `
   },
   {
-    id: 3,
+    id: 4,
     date: '15/11/2026',
     title: 'Câu chuyện thương hiệu REBOX: “Hộp gọn gói gọn món ngon, trọn vị sống xanh”',
     desc: 'Đồ án Kỹ năng viết cho Quan hệ công chúng của Nhóm 6 (Khoa Ngữ văn - Truyền thông, Trường ĐH Sư phạm – ĐH Đà Nẵng) với sứ mệnh loại bỏ hộp xốp dùng một lần...',
@@ -194,7 +285,7 @@ const NEWS_ARTICLES = [
     `
   },
   {
-    id: 4,
+    id: 5,
     date: '08/11/2026',
     title: 'Tiêu chuẩn kiểm nghiệm TCVN ISO/IEC 17025:2017: Cam kết an toàn tuyệt đối cho bữa ăn học đường',
     desc: 'Quy trình kiểm nghiệm định kỳ 1 lần/tuần của hộp REBOX tại Trung tâm Ứng dụng Khoa học Công nghệ và Đo lường Chất lượng TP. Đà Nẵng (1000/1 Tôn Đản, An Khê)...',
@@ -981,6 +1072,7 @@ const closeNews = $('#closeNews');
 const newsReader = $('#newsReaderContent');
 
 function openNews(id) {
+  window.openNews = openNews;
   const a = NEWS_ARTICLES.find(x => x.id === id);
   if (!a || !newsReader) return;
 
