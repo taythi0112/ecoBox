@@ -10,406 +10,205 @@ const FREE_SHIP = 500000;
 const PRODUCTS = [
   {
     id: 1,
-    name: 'Hộp cơm tái chế 1 ngăn EcoBox Basic 800ml',
-    cat: 'hop-com',
-    price: 129000,
-    old: 169000,
-    color: '#2d6645',
-    bg: '#d6f0e1',
-    tag: 'new',
-    rating: 4.9,
-    reviews: 42,
-    capacity: '800ml',
-    material: 'Nhựa PP số 5 tái chế (BPA Free)',
+    name: 'Hộp REBOX Size S (700 ml) – Xanh lá cây',
+    cat: 'size-s',
+    price: 25000,
+    old: 0,
+    color: '#91A384',
+    bg: '#f5f8f4',
+    tag: 'hot',
+    rating: 5.0,
+    reviews: 185,
+    capacity: '700 ml (18 × 13 × 5,5 cm)',
+    material: '100% Nhựa PP nguyên sinh đạt chuẩn an toàn thực phẩm',
     temp: '-20°C đến 120°C',
-    desc: 'Thiết kế 1 ngăn rộng rãi, nắp khóa gài 4 cạnh trợ lực chống tràn tuyệt đối. Thích hợp cho bữa cơm văn phòng gọn gàng.',
-    img: 'images/hopcom.png'
+    desc: 'Kích thước chuẩn: 18 × 13 × 5,5 cm. Màu xanh lá đại diện cho môi trường và lối sống xanh. Cấu trúc 4 ngăn khoa học: 1 ngăn lớn bên trái đựng cơm/món chính, 1 ngăn tròn trung tâm đựng nước chấm/xốt/kim chi/dưa chua, 2 ngăn phụ bên phải đựng rau củ & món mặn phụ. Tối ưu cho khẩu phần tiêu chuẩn sinh viên. Tích hợp tem QR & ID niêm phong tiệt trùng.',
+    img: 'images/sanpham/hopxanh.png'
   },
   {
     id: 2,
-    name: 'Hộp cơm 3 ngăn EcoBox Lunch Pro 1100ml',
-    cat: 'hop-com',
-    price: 189000,
-    old: 249000,
-    color: '#d48b04',
-    bg: '#fffadb',
-    tag: 'hot',
-    rating: 5.0,
-    reviews: 86,
-    capacity: '1100ml',
-    material: 'Nhựa PP số 5 tái chế cao cấp',
-    temp: '-20°C đến 120°C',
-    desc: '3 ngăn phân chia khoa học: cơm, thức ăn mặn và rau riêng biệt. Giữ trọn hương vị từng món, dùng được lò vi sóng.',
-    img: 'images/hopcom.png'
-  },
-  {
-    id: 3,
-    name: 'Hộp cơm văn phòng 2 tầng EcoBox Tower 1400ml',
-    cat: 'hop-com',
-    price: 229000,
-    old: 299000,
-    color: '#3d7a57',
-    bg: '#e4f5ec',
-    tag: '',
-    rating: 4.8,
-    reviews: 35,
-    capacity: '1400ml',
-    material: 'Nhựa PP số 5 tái chế 2 lớp cách nhiệt',
-    temp: '-20°C đến 120°C',
-    desc: 'Dung tích khủng 1400ml chia làm 2 tầng xếp chồng thông minh, tặng kèm bộ thìa đũa kháng khuẩn gài gọn trên nắp.',
-    img: 'images/hopcom.png'
-  },
-  {
-    id: 4,
-    name: 'Hộp cơm giữ nhiệt nắp hít EcoBox Thermal 900ml',
-    cat: 'hop-com',
-    price: 259000,
-    old: 320000,
-    color: '#2d6645',
-    bg: '#d6f0e1',
-    tag: 'new',
-    rating: 4.9,
-    reviews: 29,
-    capacity: '900ml',
-    material: 'Nhựa PP tái chế + Lớp chân không',
-    temp: '-10°C đến 110°C',
-    desc: 'Nắp van thoát hơi thông minh mở trước khi quay lò vi sóng, gioăng silicone đôi giữ nhiệt ấm nóng đến 4 tiếng.',
-    img: 'images/hopcom.png'
-  },
-  {
-    id: 5,
-    name: 'Hộp cơm sinh viên nhỏ gọn EcoBox Student 700ml',
-    cat: 'hop-com',
-    price: 99000,
-    old: 130000,
-    color: '#52946e',
-    bg: '#eef8f2',
-    tag: '',
-    rating: 4.7,
-    reviews: 64,
-    capacity: '700ml',
-    material: 'Nhựa PP số 5 tinh lọc an toàn',
-    temp: '-20°C đến 120°C',
-    desc: 'Giá mềm dành cho học sinh - sinh viên, siêu nhẹ chỉ 180g, vừa vặn mọi ngăn balo mang đi học hằng ngày.',
-    img: 'images/hopcom.png'
-  },
-  {
-    id: 6,
-    name: 'Hộp trữ đông EcoBox Freeze 500ml (Set 3 hộp)',
-    cat: 'tru-dong',
-    price: 149000,
-    old: 195000,
-    color: '#52946e',
-    bg: '#d6f0e1',
-    tag: 'hot',
-    rating: 4.9,
-    reviews: 73,
-    capacity: '500ml x 3',
-    material: 'Nhựa PP dẻo chuyên dụng tủ đông',
-    temp: '-30°C đến 100°C',
-    desc: 'Chất liệu nhựa dẻo không bị nứt vỡ khi đông đá nhiệt độ âm sâu. Xếp chồng tiết kiệm 50% diện tích tủ lạnh.',
-    img: 'images/hoptrudong.png'
-  },
-  {
-    id: 7,
-    name: 'Hộp trữ đông chữ nhật EcoBox Freeze Max 1200ml',
-    cat: 'tru-dong',
-    price: 99000,
+    name: 'Hộp REBOX Size L (1000 ml) – Màu vàng ấm',
+    cat: 'size-l',
+    price: 25000,
     old: 0,
-    color: '#2d6645',
-    bg: '#eef8f2',
-    tag: 'new',
-    rating: 4.8,
-    reviews: 19,
-    capacity: '1200ml',
-    material: 'Nhựa PP trong suốt tái chế',
-    temp: '-25°C đến 110°C',
-    desc: 'Thân hộp trong suốt dễ nhận biết thực phẩm bên trong, nắp viền gờ kín khít ngăn lẫn mùi tuyệt đối.',
-    img: 'images/hoptrudong.png'
-  },
-  {
-    id: 8,
-    name: 'Hộp trữ đông chia 4 ngăn EcoBox Fresh Prep',
-    cat: 'tru-dong',
-    price: 119000,
-    old: 150000,
-    color: '#d48b04',
-    bg: '#fffadb',
-    tag: '',
-    rating: 4.8,
-    reviews: 31,
-    capacity: '1000ml',
-    material: 'Nhựa PP số 5 đạt chuẩn FDA',
-    temp: '-20°C đến 100°C',
-    desc: 'Lựa chọn số 1 cho mẹ chuẩn bị đồ ăn dặm hoặc thực phẩm meal-prep đầu tuần cho cả gia đình.',
-    img: 'images/hoptrudong.png'
-  },
-  {
-    id: 9,
-    name: 'Set 2 hộp trữ thực phẩm dẻo EcoBox Cryo 850ml',
-    cat: 'tru-dong',
-    price: 139000,
-    old: 175000,
-    color: '#3d7a57',
-    bg: '#e4f5ec',
-    tag: '',
-    rating: 4.9,
-    reviews: 22,
-    capacity: '850ml x 2',
-    material: 'Nhựa PP đàn hồi tái chế',
-    temp: '-30°C đến 100°C',
-    desc: 'Đáy hộp thiết kế rãnh nổi giúp rã đông thực phẩm nhanh hơn và không bị đọng nước bề mặt.',
-    img: 'images/hoptrudong.png'
-  },
-  {
-    id: 10,
-    name: 'Hộp bảo quản rau củ tươi lâu EcoBox Crisp 1800ml',
-    cat: 'tru-dong',
-    price: 179000,
-    old: 220000,
-    color: '#2d6645',
-    bg: '#d6f0e1',
-    tag: 'new',
-    rating: 5.0,
-    reviews: 17,
-    capacity: '1800ml',
-    material: 'Nhựa PP tái chế kháng khuẩn',
-    temp: '-10°C đến 100°C',
-    desc: 'Có khay lọc nước bên dưới đáy giúp rau thơm, hoa quả luôn ráo nước và tươi lâu hơn đến 2 tuần.',
-    img: 'images/hoptrudong.png'
-  },
-  {
-    id: 11,
-    name: 'Hộp đựng mang đi EcoBox Mini Pocket 400ml',
-    cat: 'mang-di',
-    price: 79000,
-    old: 99000,
-    color: '#3d7a57',
-    bg: '#e4f5ec',
-    tag: '',
-    rating: 4.7,
-    reviews: 48,
-    capacity: '400ml',
-    material: 'Nhựa PP tái chế siêu bền',
-    temp: '-20°C đến 120°C',
-    desc: 'Nhỏ gọn bỏ vừa túi xách, quai silicon móc tiện lợi mang theo hạt ngũ cốc, sữa chua hoặc đồ ăn vặt.',
-    img: 'images/tuimangdi.png'
-  },
-  {
-    id: 12,
-    name: 'Hộp đựng trái cây & hạt EcoBox Snack 350ml',
-    cat: 'mang-di',
-    price: 69000,
-    old: 0,
-    color: '#2d6645',
-    bg: '#eef8f2',
-    tag: 'new',
-    rating: 4.8,
-    reviews: 33,
-    capacity: '350ml',
-    material: 'Nhựa PP số 5 an toàn',
-    temp: '-20°C đến 100°C',
-    desc: 'Nắp vặn xoáy cao su chống rò rỉ nước trái cây, bề mặt nhám mờ chống trầy xước.',
-    img: 'images/tuimangdi.png'
-  },
-  {
-    id: 13,
-    name: 'Hộp cơm trẻ em quai xách EcoBox Kids 600ml',
-    cat: 'mang-di',
-    price: 109000,
-    old: 145000,
-    color: '#d48b04',
-    bg: '#fffadb',
-    tag: '',
-    rating: 4.9,
-    reviews: 58,
-    capacity: '600ml',
-    material: 'Nhựa PP tái chế đạt chuẩn an toàn trẻ em',
-    temp: '-20°C đến 110°C',
-    desc: 'Màu sắc pastel xinh xắn, quai xách gập gọn linh hoạt, góc cạnh được mài nhẵn an toàn cho bé.',
-    img: 'images/tuimangdi.png'
-  },
-  {
-    id: 14,
-    name: 'Bình nước cá nhân EcoBottle Recycled 650ml',
-    cat: 'mang-di',
-    price: 89000,
-    old: 119000,
-    color: '#52946e',
-    bg: '#d6f0e1',
-    tag: 'hot',
-    rating: 4.9,
-    reviews: 95,
-    capacity: '650ml',
-    material: 'Nhựa PP tái chế trong suốt',
-    temp: '-10°C đến 95°C',
-    desc: 'Miệng bình rộng dễ vệ sinh và cho đá viên, nắp bật một chạm kèm khóa chống bật vô ý.',
-    img: 'images/tuimangdi.png'
-  },
-  {
-    id: 15,
-    name: 'Túi giữ nhiệt canvas lót bạc EcoBag EcoBox',
-    cat: 'mang-di',
-    price: 115000,
-    old: 150000,
-    color: '#2d6645',
-    bg: '#e4f5ec',
-    tag: '',
-    rating: 4.9,
-    reviews: 44,
-    capacity: 'Vừa 2 hộp cơm + bình nước',
-    material: 'Vải Canvas mộc + Lớp màng nhôm cách nhiệt',
-    temp: 'Giữ nóng/lạnh 4 - 6 tiếng',
-    desc: 'Thiết kế tối giản phong cách Nhật, quai xách may chéo chịu lực đến 5kg, chống thấm nước bên trong.',
-    img: 'images/tuimangdi.png'
-  },
-  {
-    id: 16,
-    name: 'Combo quà tặng "Bữa ăn xanh" (3 hộp + Túi canvas)',
-    cat: 'combo',
-    price: 399000,
-    old: 560000,
-    color: '#d48b04',
-    bg: '#fffadb',
+    color: '#f4d348',
+    bg: '#fffdf0',
     tag: 'hot',
     rating: 5.0,
-    reviews: 112,
-    capacity: '1 Hộp cơm 3 ngăn + 2 Hộp trữ đông + 1 Túi',
-    material: 'Trọn bộ hộp PP tái chế cao cấp',
+    reviews: 210,
+    capacity: '1000 ml (20 × 15 × 6,5 cm)',
+    material: '100% Nhựa PP nguyên sinh chịu lực va đập',
     temp: '-20°C đến 120°C',
-    desc: 'Set quà tặng hoàn hảo cho lối sống xanh, đóng gói trong hộp kraft sinh học sang trọng kèm thiệp viết tay.',
-    img: 'images/hopqua.png'
-  },
-  {
-    id: 17,
-    name: 'Combo văn phòng cả tuần EcoBox Week (5 hộp cơm)',
-    cat: 'combo',
-    price: 549000,
-    old: 840000,
-    color: '#3d7a57',
-    bg: '#e4f5ec',
-    tag: '',
-    rating: 4.9,
-    reviews: 67,
-    capacity: '5 Hộp 800ml cho 5 ngày làm việc',
-    material: 'Nhựa PP số 5 tái chế',
-    temp: '-20°C đến 120°C',
-    desc: 'Giải pháp chuẩn bị bữa trưa đầu tuần gọn gàng, tiết kiệm đến 35% so với mua từng hộp riêng lẻ.',
-    img: 'images/hopqua.png'
-  },
-  {
-    id: 18,
-    name: 'Combo sinh viên khởi đầu xanh EcoBox GreenStart',
-    cat: 'combo',
-    price: 219000,
-    old: 289000,
-    color: '#2d6645',
-    bg: '#d6f0e1',
-    tag: 'new',
-    rating: 4.8,
-    reviews: 39,
-    capacity: '1 Hộp cơm 1 ngăn + 1 Bình nước 650ml + Túi rút',
-    material: 'Nhựa PP tái chế',
-    temp: '-20°C đến 120°C',
-    desc: 'Set cơ bản nhất cho bạn trẻ bắt đầu hành trình tự nấu ăn và cắt giảm đồ nhựa dùng 1 lần.',
-    img: 'images/hopqua.png'
-  },
-  {
-    id: 19,
-    name: 'Combo gia đình toàn diện EcoBox Family (6 hộp)',
-    cat: 'combo',
-    price: 459000,
-    old: 620000,
-    color: '#2d6645',
-    bg: '#d6f0e1',
-    tag: '',
-    rating: 4.9,
-    reviews: 43,
-    capacity: 'Set 6 hộp trữ đông và chia đồ ăn',
-    material: 'Nhựa PP số 5 tủ đông chuyên dụng',
-    temp: '-30°C đến 100°C',
-    desc: 'Được các bà nội trợ tin chọn để phân loại thịt cá và bảo quản đồ ăn sạch sẽ trong tuần.',
-    img: 'images/hopqua.png',
-    sold: true
+    desc: 'Kích thước chuẩn: 20 × 15 × 6,5 cm với chiều sâu 6,5 cm vượt trội. Màu vàng ấm áp, trẻ trung, tương phản nổi bật trong không gian căn tin. Cấu trúc 4 ngăn rộng rãi: 1 ngăn dài lớn phía trước đựng cơm/bún/mì, 2 ngăn chữ nhật bo góc phía sau đựng món mặn chính và rau xào/luộc, 1 ngăn vuông nhỏ góc phải đựng gia vị/xốt. Chứa trọn vẹn suất ăn năng lượng cao mặn - xào - canh.',
+    img: 'images/sanpham/hopvang.png'
   }
 ];
 
-const BEST_IDS = [1, 2, 6, 16, 14, 17];
+const BEST_IDS = [1, 2];
 const CAT_NAMES = {
   all: 'Tất cả sản phẩm',
-  'hop-com': 'Hộp cơm văn phòng',
-  'tru-dong': 'Hộp trữ đông & làm đá',
-  'mang-di': 'Mang đi mỗi ngày',
-  combo: 'Combo quà tặng tiết kiệm'
+  'size-s': 'Hộp REBOX Size S (700 ml)',
+  'size-l': 'Hộp REBOX Size L (1000 ml)'
 };
 
 /* ---------- DỮ LIỆU BÀI VIẾT TIN TỨC ---------- */
 const NEWS_ARTICLES = [
   {
     id: 1,
-    date: '20/10/2026',
-    title: 'Vì sao nên chuyển sang hộp cơm tái sử dụng cho bữa ăn văn phòng?',
-    desc: 'Mỗi năm một người làm việc văn phòng thải ra trung bình hơn 250 chiếc hộp xốp và túi nilon...',
+    date: '01/12/2026',
+    title: 'THÔNG CÁO BÁO CHÍ: REBOX Ra Mắt Mô Hình Hộp Đựng Thức Ăn Tái Sử Dụng Tại Trường Đại Học Sư Phạm – Đại Học Đà Nẵng',
+    desc: 'Lễ ra mắt chính thức mô hình hộp tuần hoàn và phát động Thử thách số “7 ngày dùng xanh cùng REBOX” từ ngày 12/12 đến 19/12/2026 tại Hội trường Đất Quảng (phòng 202 toà nhà A6)...',
     readTime: '4 phút đọc',
-    author: 'Nhóm nghiên cứu EcoBox',
-    tag: 'Lối sống xanh',
+    author: 'Mai Thùy Linh – Phụ trách Truyền thông REBOX',
+    tag: 'Thông cáo báo chí',
+    badge: 'CHÍNH THỨC',
     content: `
-      <p>Theo khảo sát thực tế tại các tòa nhà văn phòng, thói quen gọi cơm trưa giao tận nơi tạo ra một lượng rác thải khổng lồ gồm hộp xốp, hộp nhựa mỏng, túi nilon và thìa đũa dùng một lần.</p>
-      <p>Không chỉ gây ô nhiễm nghiêm trọng khi phải mất hàng trăm năm để phân hủy, các loại hộp xốp tái chế kém chất lượng khi đựng thức ăn nóng còn có nguy cơ thôi nhiễm các chất độc hại vào cơ thể.</p>
-      <div class="news-reader__callout">
-        "Chuyển sang sử dụng hộp cơm cá nhân mang từ nhà không chỉ bảo vệ sức khỏe và túi tiền mà còn giảm ngay 250+ món rác nhựa mỗi năm."
+      <div class="news-reader__press-head">
+        <div style="text-align:center; margin-bottom:18px;">
+          <h3 style="color:var(--navy); font-size:18px; margin-bottom:4px; text-transform:uppercase;">THÔNG CÁO BÁO CHÍ</h3>
+          <h2 style="color:var(--green-sage); font-size:20px; line-height:1.4;">REBOX RA MẮT MÔ HÌNH HỘP ĐỰNG THỨC ĂN TÁI SỬ DỤNG TẠI TRƯỜNG ĐẠI HỌC SƯ PHẠM – ĐẠI HỌC ĐÀ NẴNG</h2>
+          <p style="font-style:italic; color:var(--muted); margin-top:6px;">Đà Nẵng, ngày 01 tháng 12 năm 2026</p>
+        </div>
       </div>
-      <p>Với chất liệu nhựa PP số 5 an toàn, chịu nhiệt tới 120°C và nắp khóa silicone kín khít, EcoBox giúp bạn tự tin mang theo những bữa ăn đủ chất, nóng hổi và giữ trọn vẹn hương vị.</p>
+
+      <p>Trong bối cảnh rác thải từ hộp xốp và bao bì dùng một lần ngày càng gây áp lực lên môi trường và gây hại cho sức khỏe con người, việc thúc đẩy các giải pháp tiêu dùng bền vững càng trở nên cấp thiết. Mô hình hộp đựng thức ăn tái sử dụng <b>REBOX</b> hướng đến cung cấp giải pháp thay thế thuận tiện, góp phần giảm thiểu rác thải và hình thành thói quen tiêu dùng có trách nhiệm trong sinh viên.</p>
+
+      <p>Nhằm khuyến khích sinh viên trải nghiệm mô hình, REBOX triển khai chương trình thử thách số <b>“7 ngày dùng xanh cùng REBOX”</b> từ ngày <b>12/12 đến 19/12/2026</b> tại Trường Đại học Sư phạm – Đại học Đà Nẵng. Đây là hoạt động mở đầu cho chiến dịch thử nghiệm kéo dài ba tháng, từ tháng 12/2026 đến tháng 02/2027. Hoạt động diễn ra nhằm giúp sản phẩm REBOX tiếp cận đến công chúng thông qua những thử thách truyền thông số được quay bởi KOL, KOCs, Influencers và học sinh, sinh viên.</p>
+
+      <div class="news-reader__callout">
+        <b>Đại diện Ban Giám đốc Công ty REBOX chia sẻ:</b><br>
+        “Sự an tâm về vệ sinh là một trong những yếu tố quan trọng để sinh viên thay đổi thói quen sử dụng hộp đựng thức ăn tái sử dụng. Thông qua chiến dịch truyền thông: <i>“Đằng sau mỗi chiếc hộp sử dụng một lần là những hệ luỵ khó lường”</i> và thử thách <i>“7 ngày dùng xanh cùng REBOX”</i>, REBOX mong muốn mang đến sự minh bạch về quy trình làm sạch, giúp sinh viên an tâm trong quá trình sử dụng hộp.”
+      </div>
+
+      <p>REBOX ứng dụng công nghệ truy xuất thông tin vệ sinh hộp qua mã QR, kết hợp quy trình làm sạch và khử khuẩn cùng hệ thống trạm trả hộp, hướng đến nâng cao sự an tâm và thuận tiện cho người sử dụng. Thông qua mô hình này, REBOX hướng đến giảm thiểu hộp xốp dùng một lần, đồng thời thúc đẩy thói quen tiêu dùng bền vững.</p>
+
+      <div class="news-reader__press-box" style="background:#f4fbf7; border:1px solid #b7e0c8; border-radius:12px; padding:18px; margin:20px 0;">
+        <h4 style="color:var(--navy); margin-bottom:10px; display:flex; align-items:center; gap:8px;">
+          📅 THÔNG TIN CHƯƠNG TRÌNH LỄ RA MẮT
+        </h4>
+        <ul style="list-style:none; padding:0; margin:0; display:grid; gap:8px;">
+          <li>⏰ <b>Thời gian:</b> 7g30 ngày 12/12/2026 (Thứ Bảy)</li>
+          <li>📍 <b>Địa điểm:</b> Hội trường Đất Quảng (phòng 202 toà nhà A6), Trường Đại học Sư phạm – Đại học Đà Nẵng, số 459 Tôn Đức Thắng, phường Hoà Khánh Nam, quận Liên Chiểu, TP. Đà Nẵng.</li>
+        </ul>
+        <p style="margin-top:12px; font-style:italic; font-size:14px; color:#3d5a45;">Công ty REBOX trân trọng kính mời quý thầy cô là giảng viên trường Đại học Sư phạm – Đại học Đà Nẵng, các tổ chức, cá nhân, sinh viên, các phóng viên báo chí truyền thông đến tham dự chương trình.</p>
+      </div>
+
+      <div class="news-reader__contact-box" style="background:#fffdf0; border:1px solid #fae477; border-radius:12px; padding:16px; margin-top:20px;">
+        <h5 style="color:#8a6400; margin-bottom:8px;">📞 THÔNG TIN LIÊN HỆ BÁO CHÍ:</h5>
+        <p style="margin:4px 0;"><b>Đơn vị:</b> Công ty REBOX (Đồ án Nhóm 6 – Khoa Ngữ văn - Truyền thông, ĐH Sư phạm Đà Nẵng)</p>
+        <p style="margin:4px 0;"><b>Người phụ trách truyền thông:</b> Mai Thùy Linh</p>
+        <p style="margin:4px 0;"><b>Điện thoại / Hotline:</b> <a href="tel:0374596585" style="color:var(--navy); font-weight:700;">0374 596 585</a></p>
+        <p style="margin:4px 0;"><b>Email:</b> <a href="mailto:Maitlinh209@gmail.com" style="color:var(--navy); font-weight:700;">Maitlinh209@gmail.com</a></p>
+      </div>
     `
   },
   {
     id: 2,
-    date: '15/10/2026',
-    title: 'Quy trình nhóm sinh viên thiết kế và thử nghiệm mẫu hộp nhựa tái chế',
-    desc: 'Hành trình từ bản vẽ CAD 3D đầu tiên đến xưởng thử nghiệm độ chịu lực và gioăng chống tràn...',
-    readTime: '6 phút đọc',
-    author: 'Đại diện Nhóm 14',
-    tag: 'Nhật ký đồ án',
+    date: '20/12/2026',
+    title: 'THÔNG CÁO BÁO CHÍ: REBOX Thông Tin Chính Thức Về Việc Xử Lý Sự Cố Chậm Hoàn Tiền Đặt Cọc Cho Khách Hàng',
+    desc: 'Phản hồi minh bạch và trách nhiệm của REBOX liên quan đến sự cố kỹ thuật chưa đồng bộ dữ liệu hoàn cọc 25.000 đồng tại trạm toà B3, cùng chính sách đền bù voucher Phê La & Cơm tấm Bụi...',
+    readTime: '5 phút đọc',
+    author: 'Mai Thùy Linh – Phụ trách Truyền thông REBOX',
+    tag: 'Xử lý sự cố truyền thông',
+    badge: 'MINH BẠCH',
     content: `
-      <p>Bắt đầu từ đề tài môn học Đổi mới Sáng tạo và Phát triển Sản phẩm Xanh, nhóm gồm 5 bạn sinh viên đã đặt ra câu hỏi: Liệu chúng ta có thể tạo ra một chiếc hộp cơm từ vật liệu tái chế nhưng đạt tính thẩm mỹ và độ bền tương đương các thương hiệu cao cấp?</p>
-      <p>Chúng tôi đã trải qua 8 phiên bản thử nghiệm in 3D để hoàn thiện góc vát cạnh, vị trí ngàm khóa và độ dày thành hộp nhằm tối ưu hóa việc phân bố lực.</p>
-      <div class="news-reader__callout">
-        "Thử nghiệm khó khăn nhất là bài kiểm tra chống rò rỉ: đổ đầy nước sôi có dầu mỡ, lắc mạnh trong 10 phút và xoay 360 độ mà không được rò rỉ dù chỉ một giọt."
+      <div class="news-reader__press-head">
+        <div style="text-align:center; margin-bottom:18px;">
+          <h3 style="color:var(--navy); font-size:18px; margin-bottom:4px; text-transform:uppercase;">THÔNG CÁO BÁO CHÍ</h3>
+          <h2 style="color:#d9534f; font-size:20px; line-height:1.4;">REBOX THÔNG TIN CHÍNH THỨC VỀ VIỆC XỬ LÝ SỰ CỐ CHẬM HOÀN TIỀN ĐẶT CỌC CHO KHÁCH HÀNG</h2>
+          <p style="font-style:italic; color:var(--muted); margin-top:6px;">Đà Nẵng, ngày 20 tháng 12 năm 2026</p>
+        </div>
       </div>
-      <p>Sản phẩm hoàn thiện đạt tiêu chuẩn tiếp xúc thực phẩm trực tiếp, chứng minh rằng sinh viên hoàn toàn có thể tạo ra những sản phẩm hữu ích cho cộng đồng.</p>
+
+      <p>Trong những ngày vừa qua, những thông tin được lan truyền liên quan đến phản ánh của khách hàng về việc chưa nhận được khoản tiền đặt cọc <b>25.000 đồng</b> sau khi hoàn trả hộp đúng thời hạn theo quy định của hệ thống. REBOX xin gửi lời phản hồi chính thức nhằm làm rõ vụ việc, đảm bảo thông tin minh bạch và thể hiện trách nhiệm với công chúng, khách hàng và các bên liên quan.</p>
+
+      <div style="background:#fff5f5; border-left:4px solid #d9534f; padding:14px; margin:16px 0; border-radius:0 8px 8px 0; font-style:italic; font-size:14px; color:#555;">
+        <p>Vào ngày 15 tháng 12 năm 2026, chúng tôi ghi nhận được thông tin lan truyền trên mạng xã hội với bài đăng được trích dẫn nội dung chính:</p>
+        <p><i>“Đến ngày trả hộp, mình đã đem trả tại trạm thu gom hộp ngay toà B3, đúng thời hạn và có xác nhận hoàn trả từ hệ thống. Theo thông tin REBOX cung cấp, khách hàng sẽ được hoàn lại tiền cọc sau khi trả hộp thành công trong vòng 48 giờ. Nhưng vấn đề là đến nay mình vẫn chưa nhận được 25.000 đồng đó... Nếu REBOX đã đưa ra quy định đặt cọc thì cũng phải có trách nhiệm hoàn trả đúng cam kết chứ?”</i></p>
+      </div>
+
+      <p>Trước hết, <b>REBOX gửi lời xin lỗi chân thành đến khách hàng</b> vì sự bất tiện và trải nghiệm chưa tốt trong quá trình sử dụng dịch vụ. Sau quá trình tìm hiểu vụ việc, sau đây là phản hồi chi tiết của REBOX:</p>
+
+      <h4 style="color:var(--navy); margin-top:18px;">1. Nguyên nhân sự việc</h4>
+      <p>Sau khi tiếp nhận phản ánh và tiến hành kiểm tra quy trình vận hành, REBOX xác định sự cố xuất phát từ việc <b>chưa đồng bộ dữ liệu giữa hệ thống quản lý thu hồi hộp và hệ thống xử lý hoàn tiền</b>.</p>
+      <ul style="padding-left:20px; line-height:1.6;">
+        <li>Cụ thể, khi khách hàng hoàn trả hộp và quét mã QR thành công, hệ thống thu hồi đã ghi nhận trạng thái hoàn trả. Tuy nhiên, do lỗi truyền dữ liệu giữa hai hệ thống, một số giao dịch không được chuyển tiếp đầy đủ sang hệ thống thanh toán, dẫn đến việc lệnh hoàn tiền đặt cọc 25.000 đồng không được tạo trong dữ liệu hệ thống.</li>
+        <li>Bên cạnh đó, REBOX chưa thiết lập cơ chế cảnh báo tự động đối với các giao dịch hoàn tiền bị gián đoạn. Quy trình đối soát giữa bộ phận vận hành và thanh toán còn thiếu chặt chẽ, khiến sự cố không được phát hiện và xử lý kịp thời.</li>
+        <li>REBOX cũng nhìn nhận thiếu sót trong công tác chăm sóc khách hàng khi chưa cung cấp được thông tin rõ ràng về nguyên nhân và thời gian xử lý, khiến khách hàng phải chờ đợi và chủ động liên hệ.</li>
+      </ul>
+
+      <h4 style="color:var(--navy); margin-top:18px;">2. Biện pháp khắc phục sự cố</h4>
+      <ul style="padding-left:20px; line-height:1.6;">
+        <li><b>Thứ nhất, rà soát và hoàn trả 100% tiền cọc:</b> REBOX tiến hành kiểm tra toàn bộ giao dịch hoàn trả hộp nhưng vẫn chưa nhận được tiền cọc. Những khách hàng đủ điều kiện hoàn tiền sẽ được ưu tiên xử lý và hoàn trả đầy đủ <b>25.000 đồng</b>. Đồng thời, khách hàng sẽ được thông báo về tình trạng và tiến độ xử lý giao dịch.</li>
+        <li><b>Thứ hai, khắc phục lỗi hệ thống:</b> Kiểm tra và điều chỉnh kết nối dữ liệu giữa hệ thống xác nhận thu hồi hộp và hệ thống thanh toán. Thiết lập cơ chế cảnh báo tự động đối với các giao dịch chưa hoàn tất để kịp thời phát hiện và xử lý.</li>
+        <li><b>Thứ ba, tăng cường kiểm soát vận hành:</b> Thiết lập quy trình đối soát giao dịch hằng ngày giữa bộ phận thu hồi hộp và bộ phận thanh toán. Bộ phận CSKH được hỗ trợ công cụ tra cứu trạng thái giao dịch nhằm cung cấp thông tin chính xác và kịp thời cho người sử dụng.</li>
+        <li><b>Thứ tư, minh bạch hóa quy trình hoàn tiền:</b> Cung cấp mã giao dịch riêng cho mỗi lần hoàn trả hộp, giúp khách hàng chủ động theo dõi trạng thái hoàn tiền và nắm rõ các bước xử lý khi phát sinh sự cố.</li>
+      </ul>
+
+      <div class="news-reader__press-box" style="background:#fcf8e3; border:1px solid #faebcc; border-radius:12px; padding:18px; margin:20px 0;">
+        <h4 style="color:#8a6d3b; margin-bottom:10px;">🎁 3. CHÍNH SÁCH HỖ TRỢ KHÁCH HÀNG BỊ ẢNH HƯỞNG</h4>
+        <p>Bên cạnh việc hoàn trả đầy đủ khoản tiền đặt cọc 25.000 đồng, REBOX triển khai chính sách hỗ trợ dành cho những khách hàng bị ảnh hưởng:</p>
+        <ul style="padding-left:20px; line-height:1.6; margin-top:8px;">
+          <li><b>01 Voucher giảm giá 50%</b> tại hệ thống chuỗi <b>Phê La tại Đà Nẵng</b>.</li>
+          <li><b>01 Voucher suất ăn miễn phí</b> tại quán đối tác <b>Cơm tấm Bụi (40 Phạm Như Xương, phường Hoà Khánh Nam, Đà Nẵng)</b>.</li>
+        </ul>
+        <p style="font-size:13.5px; color:#8a6d3b; margin-top:8px; font-style:italic;">* Chính sách hỗ trợ này không thay thế nghĩa vụ hoàn trả tiền cọc mà khách hàng được nhận theo quy định.</p>
+      </div>
+
+      <h4 style="color:var(--navy); margin-top:18px;">4. Cam kết từ REBOX</h4>
+      <p>Qua sự việc, REBOX cam kết:</p>
+      <ul style="padding-left:20px; line-height:1.6;">
+        <li>Tăng cường quy trình kiểm tra - kiểm soát nội bộ.</li>
+        <li>Minh bạch trong quy trình đặt cọc, hoàn trả và xử lý giao dịch.</li>
+        <li>Đảm bảo quyền lợi và hoàn trả đầy đủ tiền cọc cho khách hàng đủ điều kiện.</li>
+        <li>Chủ động tiếp nhận, giải quyết phản ánh và không để khách hàng phải chờ đợi mà không có thông tin.</li>
+        <li>Đào tạo lại nhân sự, phòng ban trong hoạt động đặt cọc.</li>
+      </ul>
+
+      <div class="news-reader__contact-box" style="background:#fffdf0; border:1px solid #fae477; border-radius:12px; padding:16px; margin-top:20px;">
+        <h5 style="color:#8a6400; margin-bottom:8px;">📞 THÔNG TIN LIÊN HỆ:</h5>
+        <p style="margin:4px 0;"><b>Đơn vị:</b> Công ty REBOX</p>
+        <p style="margin:4px 0;"><b>Người phụ trách truyền thông:</b> Mai Thùy Linh</p>
+        <p style="margin:4px 0;"><b>Điện thoại:</b> <a href="tel:0374596585" style="color:var(--navy); font-weight:700;">0374 596 585</a></p>
+        <p style="margin:4px 0;"><b>Email:</b> <a href="mailto:Maitlinh209@gmail.com" style="color:var(--navy); font-weight:700;">Maitlinh209@gmail.com</a></p>
+      </div>
     `
   },
   {
     id: 3,
-    date: '10/10/2026',
-    title: 'Hướng dẫn bảo quản hộp đúng cách để dùng bền trên 3 năm',
-    desc: 'Những lưu ý đơn giản nhưng ít người biết khi sử dụng hộp trong lò vi sóng và máy rửa chén...',
-    readTime: '3 phút đọc',
-    author: 'Bộ phận Kỹ thuật EcoCare',
-    tag: 'Mẹo hay sử dụng',
+    date: '15/11/2026',
+    title: 'Câu chuyện thương hiệu REBOX: “Hộp gọn gói gọn món ngon, trọn vị sống xanh”',
+    desc: 'Đồ án Kỹ năng viết cho Quan hệ công chúng của Nhóm 6 (Khoa Ngữ văn - Truyền thông, Trường ĐH Sư phạm – ĐH Đà Nẵng) với sứ mệnh loại bỏ hộp xốp dùng một lần...',
+    readTime: '4 phút đọc',
+    author: 'Nhóm 6 – Khoa Ngữ văn - Truyền thông ĐHSP',
+    tag: 'Câu chuyện thương hiệu',
+    badge: 'SỨ MỆNH',
     content: `
-      <p>Một chiếc hộp EcoBox được thiết kế để sử dụng hơn 1000 lần. Tuy nhiên để giữ cho hộp luôn sáng bóng như mới và gioăng silicone không bị biến dạng, bạn nên lưu ý các điểm sau:</p>
-      <p><b>1. Khi quay lò vi sóng:</b> Luôn mở van thoát khí trên nắp hoặc mở hé chốt khóa để áp suất bên trong không làm cong vênh nắp hộp. Thời gian quay khuyến nghị từ 2 - 3 phút ở công suất trung bình.</p>
-      <p><b>2. Khi rửa thức ăn nhiều dầu mỡ:</b> Dùng nước ấm và bọt biển mềm. Tránh dùng búi sắt chà xát làm xước lớp bảo vệ bề mặt.</p>
+      <p>Tại khu vực đường Tôn Đức Thắng và Phạm Như Xương quanh Trường ĐH Sư phạm – ĐH Đà Nẵng, các quán cơm và căn tin mỗi ngày phục vụ hàng ngàn suất ăn mang đi cho sinh viên.</p>
+      <p>Lượng bao bì dùng một lần như hộp xốp, túi nilon và thìa đũa nhựa phát sinh sau mỗi bữa ăn đang là một vấn đề môi trường đáng quan tâm đối với cảnh quan học đường và sức khỏe thế hệ trẻ.</p>
       <div class="news-reader__callout">
-        "Mẹo khử mùi thức ăn đậm màu: Ngâm hộp với nước ấm pha một thìa baking soda hoặc vài lát chanh tươi trong 15 phút, hộp sẽ sạch tinh tươm."
+        "Một chiếc hộp được sử dụng nhiều lần, một hành động nhỏ được lặp lại mỗi ngày và nhiều vòng đời mới được tiếp nối."
       </div>
+      <p>REBOX được nghiên cứu và phát triển bởi <b>Nhóm 6 (Nguyễn Thái Vy, Phạm Thị Thùy Mỹ, Trịnh Trương Ái Mỹ, Nguyễn Thị Tây Thi, Võ Anh Thư, Mai Thùy Linh)</b> trong khuôn khổ học phần <i>Kỹ năng viết cho Quan hệ công chúng</i> tại Khoa Ngữ văn – Truyền thông, Trường Đại học Sư phạm – Đại học Đà Nẵng.</p>
+      <p>Thay vì sử dụng một chiếc hộp rồi bỏ đi, REBOX hướng đến mô hình: <b>Mượn – Sử dụng – Trả hộp – Làm sạch & Tiệt trùng – Tiếp tục sử dụng</b>, kéo dài vòng đời của mỗi sản phẩm và hạn chế tối đa rác thải nhựa phát sinh.</p>
     `
   },
   {
     id: 4,
-    date: '05/10/2026',
-    title: 'Ra mắt combo quà tặng doanh nghiệp & chương trình Thu hộp cũ đổi quà mới',
-    desc: 'Hợp tác cùng các câu lạc bộ sinh viên mở các trạm xanh thu gom rác nhựa tái chế...',
+    date: '08/11/2026',
+    title: 'Tiêu chuẩn kiểm nghiệm TCVN ISO/IEC 17025:2017: Cam kết an toàn tuyệt đối cho bữa ăn học đường',
+    desc: 'Quy trình kiểm nghiệm định kỳ 1 lần/tuần của hộp REBOX tại Trung tâm Ứng dụng Khoa học Công nghệ và Đo lường Chất lượng TP. Đà Nẵng (1000/1 Tôn Đản, An Khê)...',
     readTime: '5 phút đọc',
-    author: 'Ban Truyền thông EcoBox',
-    tag: 'Sự kiện xanh',
+    author: 'Bộ phận Vận hành & Tiêu chuẩn Chất lượng REBOX',
+    tag: 'Tiêu chuẩn chất lượng',
+    badge: 'KIỂM ĐỊNH',
     content: `
-      <p>Nhằm thúc đẩy vòng đời tuần hoàn của sản phẩm nhựa, EcoBox chính thức khởi động chương trình <b>EcoCycle - Thu cũ Đổi mới</b> tại 4 trạm trải nghiệm ở Hà Nội, TP.HCM, Đà Nẵng và Cần Thơ.</p>
-      <p>Bất kỳ ai mang các hộp nhựa cũ đã qua sử dụng đến trạm đều được tặng voucher giảm giá 20% khi mua sản phẩm mới, đồng thời số nhựa này sẽ được phân loại đưa về nhà máy tái chế đạt chuẩn.</p>
+      <p>An tâm vệ sinh là cam kết danh dự của REBOX đối với toàn thể sinh viên và giảng viên Trường ĐH Sư Phạm – ĐH Đà Nẵng. Mỗi chiếc hộp REBOX trước khi đưa vào lưu hành và trong suốt quá trình vận hành đều tuân thủ các quy chuẩn nghiêm ngặt nhất.</p>
+      <p>Đặc biệt, trong quá trình vận hành, hộp REBOX được <b>kiểm tra định kỳ 1 lần / tuần</b> tại <b>Trung tâm Ứng dụng khoa học công nghệ và tiêu chuẩn đo lường chất lượng TP. Đà Nẵng</b> (tổ chức KH&CN trực thuộc Sở Khoa học và Công nghệ TP. Đà Nẵng) tại địa chỉ <b>1000/1 Tôn Đản, phường An Khê, TP. Đà Nẵng</b>.</p>
       <div class="news-reader__callout">
-        "Mục tiêu năm 2026: Thu gom và tái chế hơn 50.000 món đồ nhựa sinh hoạt cùng cộng đồng học sinh - sinh viên."
+        "Mẫu hộp REBOX được gửi tới phòng kiểm nghiệm được công nhận phù hợp chuẩn quốc tế ISO/IEC 17025 (tiêu chuẩn quốc gia TCVN ISO/IEC 17025:2017) kiểm tra phơi nhiễm vi sinh và thôi nhiễm kim loại nặng."
       </div>
+      <p>Toàn bộ kết quả thử nghiệm được số hóa và lưu trữ thành hồ sơ dữ liệu web. Người dùng chỉ cần quét mã QR trên nắp hộp là có thể tra cứu tức thì tình trạng vô trùng của hộp.</p>
     `
   }
 ];
@@ -517,23 +316,21 @@ function updateWishlistUI() {
 
 /* ---------- TẠO HTML CHO THẺ SẢN PHẨM ---------- */
 function cardHTML(p) {
-  const d = discount(p);
+  const isBox = p.cat.startsWith('size');
   const badge = p.sold
-    ? ''
-    : d
-      ? `<span class="badge">-${d}%</span>`
-      : p.tag === 'new'
-        ? '<span class="badge badge--new">MỚI</span>'
-        : p.tag === 'hot'
-          ? '<span class="badge">HOT</span>'
-          : '';
+    ? '<span class="badge">TẠM HẾT</span>'
+    : p.tag === 'new'
+      ? '<span class="badge badge--new">MỚI</span>'
+      : p.tag === 'hot'
+        ? '<span class="badge">HOT</span>'
+        : '';
 
   const isFav = wishlist.includes(p.id);
 
   return `
   <article class="card ${p.sold ? 'card--sold' : ''}">
     ${badge}
-    <button class="card__wishlist ${isFav ? 'is-fav' : ''}" data-wishlist="${p.id}" aria-label="Yêu thích">
+    <button class="card__wishlist ${isFav ? 'is-fav' : ''}" data-wishlist="${p.id}" aria-label="Lưu mẫu quan tâm">
       <svg viewBox="0 0 24 24" width="18" height="18" fill="${isFav ? '#f0647c' : 'none'}" stroke="${isFav ? '#f0647c' : 'currentColor'}" stroke-width="2">
         <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
       </svg>
@@ -543,12 +340,12 @@ function cardHTML(p) {
         ${imageOf(p)}
       </a>
       <button class="card__quickview-btn" data-quickview="${p.id}">
-        👁️ Xem nhanh
+        👁️ Xem quy cách
       </button>
     </div>
     <div class="card__body">
       <div class="card__meta">
-        <span class="card__cat">${CAT_NAMES[p.cat] || 'Sản phẩm'}</span>
+        <span class="card__cat">${CAT_NAMES[p.cat] || 'Mô hình REBOX'}</span>
         <div class="card__rating">⭐ <b>${p.rating}</b> <span>(${p.reviews})</span></div>
       </div>
       <h3 class="card__title"><a href="javascript:void(0)" data-quickview="${p.id}">${p.name}</a></h3>
@@ -556,14 +353,21 @@ function cardHTML(p) {
         <span>📐 ${p.capacity}</span>
         <span>♻️ PP #5</span>
       </div>
-      <div class="card__foot">
-        <div class="price">
-          <b>${money(p.price)}</b>
-          ${p.old ? `<s>${money(p.old)}</s>` : ''}
+      <div class="card__foot card__foot--model">
+        <div class="card__deposit-info">
+          <span class="deposit-lbl">${isBox ? 'Cọc hoàn lại 100%:' : p.price === 0 ? 'Ưu đãi sinh viên:' : 'Cọc mượn hoàn lại:'}</span>
+          <b class="deposit-val">${p.price === 0 ? '0₫ (Miễn phí cọc)' : money(p.price)}</b>
+          ${isBox ? '<span class="deposit-free">Hoàn cọc 48h tại trạm</span>' : ''}
+          ${p.price === 0 ? '<span class="deposit-free">Thẻ EcoPass ĐHSP</span>' : ''}
         </div>
-        <button class="card__add" data-add="${p.id}" aria-label="Thêm vào giỏ">
-          ${p.sold ? 'Hết hàng' : '+'}
-        </button>
+        <div class="card__actions-btn-group">
+          <button class="btn btn--primary btn--sm card__detail-btn" data-quickview="${p.id}" title="Xem cấu tạo và tiêu chuẩn của hộp">
+            Xem quy cách
+          </button>
+          <a href="#cua-hang" class="btn btn--outline btn--sm card__station-btn" title="Xem 2 căn tin & 8 quán đối tác">
+            Điểm mượn
+          </a>
+        </div>
       </div>
     </div>
   </article>`;
@@ -920,62 +724,50 @@ let qvQty = 1;
 function openQuickView(id) {
   const p = PRODUCTS.find(x => x.id === id);
   if (!p) return;
-  qvQty = 1;
   const content = $('#quickviewContent');
   if (!content) return;
 
-  const d = discount(p);
+  const isBox = p.cat.startsWith('size');
   content.innerHTML = `
     <div class="quickview__img-col" style="--bg:${p.bg}">
       ${imageOf(p)}
     </div>
     <div class="quickview__details">
-      <span class="quickview__cat">${CAT_NAMES[p.cat] || 'Sản phẩm EcoBox'}</span>
+      <span class="quickview__cat">${CAT_NAMES[p.cat] || 'Giải pháp REBOX'}</span>
       <h2 class="quickview__title">${p.name}</h2>
       <div class="quickview__meta">
         <span style="color:#ff9800; font-weight:700;">⭐⭐⭐⭐⭐ ${p.rating} / 5</span>
-        <span style="color:var(--muted)">(${p.reviews} lượt đánh giá thực tế)</span>
+        <span style="color:var(--muted)">(${p.reviews} lượt mượn & trải nghiệm thực tế)</span>
       </div>
       <div class="quickview__price-box">
-        <b>${money(p.price)}</b>
-        ${p.old ? `<s>${money(p.old)}</s> <span class="badge">-${d}%</span>` : ''}
-      </div>
-      <p style="font-size:14.5px; color:#2c4464; line-height:1.5;">${p.desc}</p>
-      
-      <div class="quickview__specs-list">
-        <div><b>📐 Dung tích tiêu chuẩn:</b> ${p.capacity}</div>
-        <div><b>♻️ Nguyên liệu:</b> ${p.material}</div>
-        <div><b>🔥 Khả năng chịu nhiệt:</b> ${p.temp}</div>
-        <div><b>🛡️ Bảo hành chính hãng:</b> 6 tháng (1 đổi 1 trong 7 ngày)</div>
-      </div>
-
-      <div style="display:flex; align-items:center; gap:14px; margin-top:8px;">
-        <span style="font-size:13.5px; font-weight:700;">Số lượng:</span>
-        <div class="qty" style="margin-top:0;">
-          <button id="qvDec" aria-label="Giảm">−</button>
-          <span id="qvQtyDisplay">1</span>
-          <button id="qvInc" aria-label="Tăng">+</button>
+        <div class="quickview__model-tag">
+          <span class="tag-label">${isBox ? 'Định mức cọc hoàn lại 100%:' : p.price === 0 ? 'Ưu đãi sinh viên:' : 'Mức cọc hoàn lại:'}</span>
+          <b class="tag-price">${p.price === 0 ? '0₫ (Miễn phí cọc)' : money(p.price)}</b>
+          ${isBox ? '<span class="tag-sub">Miễn phí 0₫ cọc khi đăng ký Thẻ EcoPass Sinh viên</span>' : ''}
         </div>
       </div>
+      <p style="font-size:14.5px; color:#2c4464; line-height:1.5; margin:10px 0;">${p.desc}</p>
+      
+      <div class="quickview__specs-list">
+        <div><b>📐 Quy cách kích thước:</b> ${p.capacity}</div>
+        <div><b>♻️ Tiêu chuẩn vật liệu:</b> ${p.material}</div>
+        <div><b>🔥 Ngưỡng chịu nhiệt:</b> ${p.temp} (An toàn lò vi sóng & máy sấy)</div>
+        <div><b>🍱 Cấu trúc 4 ngăn khoa học:</b> Đúc liền khối, chống tràn xốt, chống lẫn mùi</div>
+        <div><b>📱 Tem niêm phong mã QR & ID:</b> Minh bạch lịch sử rửa sấy và tiệt trùng tia UV</div>
+        <div><b>🧪 Kiểm nghiệm định kỳ:</b> 1 lần/tuần tại TT KH&CN Đà Nẵng (1000/1 Tôn Đản) theo chuẩn ISO 17025</div>
+        <div><b>🏫 Điểm phục vụ mượn - trả:</b> 2 Căn tin ĐH Sư Phạm, Kiosk Tòa B3 & 8 Quán đối tác</div>
+      </div>
 
-      <div class="quickview__actions">
-        <button class="btn btn--primary" id="qvAddBtn" style="flex:1;">🛒 Thêm vào giỏ</button>
-        <button class="btn btn--outline" id="qvBuyNowBtn" style="flex:1;">⚡ Mua ngay</button>
+      <div class="quickview__actions" style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+        <a href="#cua-hang" class="btn btn--primary" style="flex:1;" onclick="quickviewModal.classList.remove('show');">
+          📍 Xem 2 Căn Tin & 8 Quán Đối Tác Mượn Hộp
+        </a>
+        <button class="btn btn--outline" style="flex:1;" onclick="quickviewModal.classList.remove('show'); openRegisterModal('${p.name}');">
+          🤝 Đăng ký trải nghiệm mô hình
+        </button>
       </div>
     </div>
   `;
-
-  $('#qvInc').onclick = () => { qvQty++; $('#qvQtyDisplay').textContent = qvQty; };
-  $('#qvDec').onclick = () => { if (qvQty > 1) { qvQty--; $('#qvQtyDisplay').textContent = qvQty; } };
-  $('#qvAddBtn').onclick = () => {
-    addToCart(p.id, qvQty);
-    quickviewModal.classList.remove('show');
-  };
-  $('#qvBuyNowBtn').onclick = () => {
-    addToCart(p.id, qvQty);
-    quickviewModal.classList.remove('show');
-    openCheckout();
-  };
 
   quickviewModal.classList.add('show');
 }
@@ -986,6 +778,16 @@ if (quickviewModal) {
     if (e.target === quickviewModal) quickviewModal.classList.remove('show');
   });
 }
+
+function openRegisterModal(note) {
+  const registerModal = $('#registerModal');
+  if (!registerModal) return;
+  if (note && $('#regNote')) {
+    $('#regNote').value = `Mình quan tâm đến: ${note}`;
+  }
+  registerModal.classList.add('show');
+}
+
 
 /* ---------- THANH TOÁN (CHECKOUT MODAL) ---------- */
 const checkoutModal = $('#checkoutModal');
@@ -1123,11 +925,17 @@ function renderNews() {
   if (!newsGrid) return;
   newsGrid.innerHTML = NEWS_ARTICLES.map((a, i) => `
     <article class="news-card" data-news-id="${a.id}">
-      <div class="news-card__img img${i + 1}">📰</div>
-      <time>${a.date}</time>
-      <h4>${a.title}</h4>
+      <div class="news-card__img img${(i % 4) + 1}">
+        <span class="news-card__badge">${a.badge || 'TIN TỨC'}</span>
+        📰
+      </div>
+      <div class="news-card__meta-bar" style="display:flex; justify-content:space-between; align-items:center; margin-top:10px; font-size:12.5px; color:var(--muted);">
+        <span class="news-card__tag" style="background:#eef7f2; color:#2d6645; padding:2px 8px; border-radius:12px; font-weight:700;">${a.tag}</span>
+        <time>${a.date}</time>
+      </div>
+      <h4 style="margin-top:8px;">${a.title}</h4>
       <p>${a.desc}</p>
-      <span class="read-link">Đọc chi tiết bài viết →</span>
+      <span class="read-link">Đọc chi tiết toàn văn →</span>
     </article>
   `).join('');
 }
