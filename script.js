@@ -88,7 +88,7 @@ const NEWS_ARTICLES = [
         </h4>
         <ul style="list-style:none; padding:0; margin:0; display:grid; gap:8px;">
           <li>⏰ <b>Thời gian:</b> 7g30 ngày 12/12/2026 (Thứ Bảy)</li>
-          <li>📍 <b>Địa điểm:</b> Hội trường Đất Quảng (phòng 202 toà nhà A6), Trường Đại học Sư phạm – Đại học Đà Nẵng, số 459 Tôn Đức Thắng, phường Hoà Khánh Nam, quận Liên Chiểu, TP. Đà Nẵng.</li>
+          <li>🏛️ <b>Địa điểm:</b> Hội trường Đất Quảng (phòng 202 toà nhà A6), Trường Đại học Sư phạm – Đại học Đà Nẵng, số 459 Tôn Đức Thắng, phường Hoà Khánh Nam, quận Liên Chiểu, TP. Đà Nẵng.</li>
         </ul>
         <p style="margin-top:12px; font-style:italic; font-size:14px; color:#3d5a45;">Công ty REBOX trân trọng kính mời quý thầy cô là giảng viên trường Đại học Sư phạm – Đại học Đà Nẵng, các tổ chức, cá nhân, sinh viên, các phóng viên báo chí truyền thông đến tham dự chương trình.</p>
       </div>
@@ -760,7 +760,7 @@ function openQuickView(id) {
 
       <div class="quickview__actions" style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
         <a href="#cua-hang" class="btn btn--primary" style="flex:1;" onclick="quickviewModal.classList.remove('show');">
-          📍 Xem 2 Căn Tin & 8 Quán Đối Tác Mượn Hộp
+          Xem 2 Căn Tin & 8 Quán Đối Tác Mượn Hộp
         </a>
         <button class="btn btn--outline" style="flex:1;" onclick="quickviewModal.classList.remove('show'); openRegisterModal('${p.name}');">
           🤝 Đăng ký trải nghiệm mô hình
@@ -779,13 +779,49 @@ if (quickviewModal) {
   });
 }
 
+/* ---------- MODAL ĐĂNG KÝ TRẢI NGHIỆM MÔ HÌNH & HỢP TÁC ĐỐI TÁC ---------- */
+const registerModal = $('#registerModal');
+const closeRegisterModalBtn = $('#closeRegisterModal');
+const registerModelForm = $('#registerModelForm');
+
 function openRegisterModal(note) {
-  const registerModal = $('#registerModal');
   if (!registerModal) return;
   if (note && $('#regNote')) {
     $('#regNote').value = `Mình quan tâm đến: ${note}`;
   }
   registerModal.classList.add('show');
+  registerModal.setAttribute('aria-hidden', 'false');
+}
+
+function closeRegisterModal() {
+  if (!registerModal) return;
+  registerModal.classList.remove('show');
+  registerModal.setAttribute('aria-hidden', 'true');
+}
+
+window.openRegisterModal = openRegisterModal;
+window.closeRegisterModal = closeRegisterModal;
+
+if (closeRegisterModalBtn) {
+  closeRegisterModalBtn.onclick = closeRegisterModal;
+}
+
+if (registerModal) {
+  registerModal.addEventListener('click', e => {
+    if (e.target === registerModal) closeRegisterModal();
+  });
+}
+
+if (registerModelForm) {
+  registerModelForm.onsubmit = e => {
+    e.preventDefault();
+    const name = ($('#regName') ? $('#regName').value.trim() : '');
+    const phone = ($('#regPhone') ? $('#regPhone').value.trim() : '');
+    toast(`🎉 Cảm ơn ${name || 'bạn'} đã đăng ký đồng hành cùng REBOX!`);
+    alert(`CẢM ƠN BẠN ĐÃ ĐĂNG KÝ ĐỒNG HÀNH CÙNG REBOX!\n\nThông tin của bạn (${name} - ${phone}) đã được chuyển đến Ban điều phối dự án REBOX tại Trường ĐH Sư phạm – ĐH Đà Nẵng.\nĐội ngũ dự án sẽ liên hệ với bạn trong thời gian sớm nhất!`);
+    closeRegisterModal();
+    registerModelForm.reset();
+  };
 }
 
 
@@ -1162,6 +1198,7 @@ document.addEventListener('keydown', e => {
     if (checkoutModal) checkoutModal.classList.remove('show');
     if (newsModal) newsModal.classList.remove('show');
     if (posterModal) closePosterModal();
+    if (registerModal) closeRegisterModal();
   }
 });
 
