@@ -986,6 +986,40 @@ if (viewAllNewsBtn) {
   };
 }
 
+
+/* ---------- MODAL XEM POSTER / BẢN VẼ PHÓNG TO (LIGHTBOX) ---------- */
+const posterModal = $('#posterModal');
+const posterModalImg = $('#posterModalImg');
+const posterModalCaption = $('#posterModalCaption');
+const closePosterModalBtn = $('#closePosterModal');
+
+function openPosterModal(src, caption) {
+  if (!posterModal || !posterModalImg) return;
+  posterModalImg.src = src;
+  posterModalImg.alt = caption || 'Bản vẽ phóng to REBOX';
+  if (posterModalCaption) {
+    posterModalCaption.textContent = caption || '';
+  }
+  posterModal.classList.add('show');
+  posterModal.setAttribute('aria-hidden', 'false');
+}
+
+function closePosterModal() {
+  if (!posterModal) return;
+  posterModal.classList.remove('show');
+  posterModal.setAttribute('aria-hidden', 'true');
+}
+
+window.openPosterModal = openPosterModal;
+window.closePosterModal = closePosterModal;
+
+if (closePosterModalBtn) closePosterModalBtn.onclick = closePosterModal;
+if (posterModal) {
+  posterModal.addEventListener('click', e => {
+    if (e.target === posterModal) closePosterModal();
+  });
+}
+
 /* ---------- DRAWER GIỎ HÀNG, YÊU THÍCH & MENU DI ĐỘNG ---------- */
 const overlay = $('#overlay');
 const cartDrawer = $('#cartDrawer');
@@ -1127,6 +1161,7 @@ document.addEventListener('keydown', e => {
     if (quickviewModal) quickviewModal.classList.remove('show');
     if (checkoutModal) checkoutModal.classList.remove('show');
     if (newsModal) newsModal.classList.remove('show');
+    if (posterModal) closePosterModal();
   }
 });
 

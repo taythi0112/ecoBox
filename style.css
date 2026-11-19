@@ -3561,44 +3561,78 @@ textarea {
   line-height: 1.6;
 }
 
+.tech-blueprint-block {
+  margin-top: 36px;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 32px 28px;
+  border: 1px solid rgba(45, 102, 69, 0.14);
+  box-shadow: 0 10px 30px rgba(45, 102, 69, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .tech-blueprint-block__media {
   position: relative;
-  background: #f8faf8;
+  background: #ffffff;
   border-radius: 18px;
-  padding: 24px;
-  display: flex;
+  padding: 8px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px dashed rgba(45, 102, 69, 0.25);
+  border: 2px solid rgba(45, 102, 69, 0.3);
   cursor: pointer;
   overflow: hidden;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 6px 20px rgba(45, 102, 69, 0.08);
+  transition: all 0.3s ease;
 }
 
 .tech-blueprint-img {
-  max-width: 100%;
-  max-height: 480px;
+  display: block;
+  width: 100%;
+  max-width: 980px;
+  height: auto;
   object-fit: contain;
+  border-radius: 12px;
   transition: transform 0.3s ease;
-  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.06));
+}
+
+.tech-blueprint-block__media:hover {
+  border-color: var(--green-primary);
+  box-shadow: 0 10px 28px rgba(45, 102, 69, 0.16);
+  transform: translateY(-2px);
 }
 
 .tech-blueprint-block__media:hover .tech-blueprint-img {
-  transform: scale(1.02);
+  transform: scale(1.01);
 }
 
 .tech-blueprint-block__zoom-hint {
   position: absolute;
   bottom: 16px;
   right: 16px;
-  background: rgba(45, 102, 69, 0.88);
+  background: rgba(45, 102, 69, 0.92);
   backdrop-filter: blur(6px);
   color: #ffffff;
-  font-size: 12.5px;
-  font-weight: 600;
-  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 7px 16px;
   border-radius: 99px;
   pointer-events: none;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.25s ease;
+}
+
+.tech-blueprint-block__media:hover .tech-blueprint-block__zoom-hint {
+  background: var(--navy);
+  transform: scale(1.04);
 }
 
 /* Poster trong phần Câu chuyện thương hiệu */
@@ -4248,4 +4282,38 @@ textarea {
   margin: 8px auto 0;
   text-align: center;
   display: inline-block;
+}
+
+.modal--lightbox .modal__box--poster {
+  width: min(1040px, 94vw);
+  max-width: 1040px;
+  padding: 22px 20px 18px;
+  background: #ffffff;
+  border-radius: 22px;
+  text-align: center;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+}
+
+.poster-modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.poster-modal-img {
+  width: 100%;
+  max-height: 82vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  background: #fff;
+}
+
+.poster-modal-title {
+  margin-top: 14px;
+  font-size: 16px;
+  color: var(--navy);
+  font-weight: 700;
+  line-height: 1.4;
 }
