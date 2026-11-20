@@ -283,10 +283,21 @@
               đi kèm nhiều loại nước sốt hoặc nước chấm.
             </div>
 
-            <div style="display:flex; gap:12px; align-items:center;">
-              <button class="btn btn--primary" onclick="openQuickView(1)" style="flex:1;">Xem chi tiết Hộp Size
-                S</button>
-              <a href="#cua-hang" class="btn btn--outline">Điểm mượn</a>
+            <div class="box-card__rating-row" style="display:flex; align-items:center; justify-content:space-between; background:#f4fbf7; border:1px solid #d6f0e1; padding:8px 14px; border-radius:10px; margin:12px 0 14px;">
+              <div style="display:flex; align-items:center; gap:6px;">
+                <span style="color:#ff9800; font-size:15px;">⭐⭐⭐⭐⭐</span>
+                <b style="color:var(--navy); font-size:14px;" class="rating-val-1">5.0</b>
+                <span style="color:var(--muted); font-size:12.5px;" class="review-count-1">(185 đánh giá)</span>
+              </div>
+              <button type="button" class="link-rate" onclick="openReviewModal(1)" style="background:none; border:none; color:var(--green-sage); font-weight:700; font-size:13px; cursor:pointer; text-decoration:underline;">
+                ✍️ Viết đánh giá
+              </button>
+            </div>
+
+            <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+              <button class="btn btn--primary" onclick="openQuickView(1)" style="flex:1.2; min-width:130px;">Xem chi tiết Hộp Size S</button>
+              <button type="button" class="btn btn--outline btn--rate" onclick="openReviewModal(1)" style="flex:0.9; font-weight:700; border-color:#2d6645; color:#2d6645;">⭐ Đánh giá</button>
+              <a href="#cua-hang" class="btn btn--outline" style="padding:10px 14px;">Điểm mượn</a>
             </div>
           </div>
 
@@ -333,10 +344,21 @@
               cả món mặn - xào - canh.
             </div>
 
-            <div style="display:flex; gap:12px; align-items:center;">
-              <button class="btn btn--primary" onclick="openQuickView(2)" style="flex:1;">Xem chi tiết Hộp Size
-                L</button>
-              <a href="#cua-hang" class="btn btn--outline">Điểm mượn</a>
+            <div class="box-card__rating-row" style="display:flex; align-items:center; justify-content:space-between; background:#fffdf0; border:1px solid #fae477; padding:8px 14px; border-radius:10px; margin:12px 0 14px;">
+              <div style="display:flex; align-items:center; gap:6px;">
+                <span style="color:#ff9800; font-size:15px;">⭐⭐⭐⭐⭐</span>
+                <b style="color:var(--navy); font-size:14px;" class="rating-val-2">5.0</b>
+                <span style="color:var(--muted); font-size:12.5px;" class="review-count-2">(210 đánh giá)</span>
+              </div>
+              <button type="button" class="link-rate" onclick="openReviewModal(2)" style="background:none; border:none; color:#8a6400; font-weight:700; font-size:13px; cursor:pointer; text-decoration:underline;">
+                ✍️ Viết đánh giá
+              </button>
+            </div>
+
+            <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+              <button class="btn btn--primary" onclick="openQuickView(2)" style="flex:1.2; min-width:130px;">Xem chi tiết Hộp Size L</button>
+              <button type="button" class="btn btn--outline btn--rate" onclick="openReviewModal(2)" style="flex:0.9; font-weight:700; border-color:#b8860b; color:#8a6400;">⭐ Đánh giá</button>
+              <a href="#cua-hang" class="btn btn--outline" style="padding:10px 14px;">Điểm mượn</a>
             </div>
           </div>
         </div>
@@ -1793,6 +1815,77 @@
             placeholder="Ví dụ: Mình muốn đăng ký nhận thẻ EcoPass mượn hộp tuần sau / Quán của mình muốn hợp tác đặt trạm thu gom..."></textarea>
         </div>
         <button type="submit" class="btn btn--primary btn--block">Gửi Đăng Ký Đồng Hành Cùng REBOX</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL ĐÁNH GIÁ SẢN PHẨM 1 ĐẾN 5 SAO -->
+  <div class="modal" id="reviewModal" aria-hidden="true">
+    <div class="modal__box modal__box--md review-modal__box">
+      <button class="icon-btn modal__close" id="closeReviewModal" onclick="closeReviewModal()" aria-label="Đóng cửa sổ">✕</button>
+      <div class="review-modal-head">
+        <span class="eyebrow" style="color:var(--green-sage); font-weight:800;">ĐÁNH GIÁ TRẢI NGHIỆM HỘP REBOX</span>
+        <h3 id="reviewProductName" style="color:var(--navy); font-size:21px; margin:4px 0 6px; font-weight:800;">Hộp REBOX Size S (700 ml)</h3>
+        <p style="font-size:13.5px; color:var(--muted); margin:0;">Mỗi đánh giá 1 đến 5 sao của bạn là động lực giúp lan tỏa lối sống xanh và hoàn thiện chất lượng phục vụ học đường.</p>
+      </div>
+
+      <form id="productReviewForm" class="review-form">
+        <input type="hidden" id="reviewProductId" value="1">
+        
+        <!-- BỘ CHỌN 1 ĐẾN 5 SAO TƯƠNG TÁC -->
+        <div class="star-rating-block">
+          <label class="review-label"><b>Mức độ hài lòng của bạn (*):</b></label>
+          <div class="star-rating-widget" id="starWidget">
+            <button type="button" class="star-btn is-active" data-star="1" title="1 sao - Rất không hài lòng">★</button>
+            <button type="button" class="star-btn is-active" data-star="2" title="2 sao - Chưa hài lòng">★</button>
+            <button type="button" class="star-btn is-active" data-star="3" title="3 sao - Bình thường / Tạm ổn">★</button>
+            <button type="button" class="star-btn is-active" data-star="4" title="4 sao - Hài lòng & Tiện lợi">★</button>
+            <button type="button" class="star-btn is-active" data-star="5" title="5 sao - Rất hài lòng">★</button>
+          </div>
+          <div class="star-rating-text" id="starRatingDesc">
+            🤩 <b>5 / 5 sao:</b> Rất hài lòng & ủng hộ lối sống xanh!
+          </div>
+        </div>
+
+        <!-- THÔNG TIN NGƯỜI ĐÁNH GIÁ -->
+        <div class="form-row">
+          <div class="form-col">
+            <label for="revAuthor">Họ và tên của bạn (*)</label>
+            <input type="text" id="revAuthor" placeholder="Ví dụ: Hoàng Thùy Linh" required>
+          </div>
+          <div class="form-col">
+            <label for="revRole">Bạn trải nghiệm với tư cách</label>
+            <select id="revRole">
+              <option value="Sinh viên ĐH Sư phạm">Sinh viên Trường ĐH Sư phạm</option>
+              <option value="Sinh viên trường bạn">Sinh viên các trường khác tại Đà Nẵng</option>
+              <option value="Giảng viên / Cán bộ">Giảng viên / Cán bộ nhà trường</option>
+              <option value="Khách dùng quán đối tác">Khách hàng tại quán ăn đối tác</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- TIÊU CHÍ ĐÁNH GIÁ NHANH -->
+        <div class="review-tags-block">
+          <label class="review-label"><b>Ưu điểm bạn đánh giá cao nhất:</b></label>
+          <div class="review-tag-chips">
+            <label class="chip-item"><input type="checkbox" name="revHighlights" value="Sạch sẽ vô trùng" checked> <span>🧼 Sạch sẽ vô trùng</span></label>
+            <label class="chip-item"><input type="checkbox" name="revHighlights" value="Chống tràn tốt" checked> <span>🔒 Chống tràn tốt</span></label>
+            <label class="chip-item"><input type="checkbox" name="revHighlights" value="Cấu trúc 4 ngăn khoa học" checked> <span>🍱 4 Ngăn tiện lợi</span></label>
+            <label class="chip-item"><input type="checkbox" name="revHighlights" value="Hoàn tiền cọc 25k nhanh"> <span>⚡ Hoàn cọc 48h</span></label>
+            <label class="chip-item"><input type="checkbox" name="revHighlights" value="Chịu nhiệt lò vi sóng"> <span>🔥 Chịu nhiệt tốt</span></label>
+          </div>
+        </div>
+
+        <!-- NỘI DUNG NHẬN XÉT -->
+        <div class="form-group" style="margin-top:14px;">
+          <label for="revComment">Cảm nhận chi tiết của bạn (*)</label>
+          <textarea id="revComment" rows="3" placeholder="Chia sẻ cảm nhận về độ tiện lợi khi mang cơm, độ sạch của hộp sau rửa sấy, hoặc trải nghiệm mượn trả tại căn tin..." required></textarea>
+        </div>
+
+        <div class="review-form-actions" style="display:flex; justify-content:flex-end; gap:10px; margin-top:18px;">
+          <button type="button" class="btn btn--outline" onclick="closeReviewModal()">Hủy bỏ</button>
+          <button type="submit" class="btn btn--primary">⭐ Gửi Đánh Giá Ngay</button>
+        </div>
       </form>
     </div>
   </div>

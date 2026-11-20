@@ -437,7 +437,12 @@ function cardHTML(p) {
     <div class="card__body">
       <div class="card__meta">
         <span class="card__cat">${CAT_NAMES[p.cat] || 'Mô hình REBOX'}</span>
-        <div class="card__rating">⭐ <b>${p.rating}</b> <span>(${p.reviews})</span></div>
+        <div class="card__rating" style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+          <span>⭐ <b>${p.rating}</b> <small style="color:var(--muted)">(${p.reviews})</small></span>
+          <button type="button" class="card__rate-btn" onclick="event.stopPropagation(); openReviewModal(${p.id})" title="Đánh giá 1 đến 5 sao cho sản phẩm này">
+            ⭐ Đánh giá
+          </button>
+        </div>
       </div>
       <h3 class="card__title"><a href="javascript:void(0)" data-quickview="${p.id}">${p.name}</a></h3>
       <div class="card__specs">
@@ -826,9 +831,12 @@ function openQuickView(id) {
     <div class="quickview__details">
       <span class="quickview__cat">${CAT_NAMES[p.cat] || 'Giải pháp REBOX'}</span>
       <h2 class="quickview__title">${p.name}</h2>
-      <div class="quickview__meta">
+      <div class="quickview__meta" style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
         <span style="color:#ff9800; font-weight:700;">⭐⭐⭐⭐⭐ ${p.rating} / 5</span>
-        <span style="color:var(--muted)">(${p.reviews} lượt mượn & trải nghiệm thực tế)</span>
+        <span style="color:var(--muted)">(${p.reviews} lượt mượn & trải nghiệm)</span>
+        <button type="button" class="btn btn--outline btn--xs" onclick="openReviewModal(${p.id})" style="font-weight:700; border-color:#2d6645; color:#2d6645; padding:3px 10px;">
+          ⭐ Viết đánh giá 1-5 sao
+        </button>
       </div>
       <div class="quickview__price-box">
         <div class="quickview__model-tag">
@@ -849,12 +857,26 @@ function openQuickView(id) {
         <div><b>🏫 Điểm phục vụ mượn - trả:</b> 2 Căn tin ĐH Sư Phạm, Kiosk Tòa B3 & 8 Quán đối tác</div>
       </div>
 
+      <!-- ĐÁNH GIÁ TIÊU BIỂU TỪ SINH VIÊN -->
+      <div class="quickview__reviews-preview" style="margin-top:16px; background:#f9fbf8; border:1px solid #dcece0; border-radius:12px; padding:12px 16px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+          <b style="font-size:13.5px; color:var(--navy);">Đánh giá trải nghiệm thực tế:</b>
+          <button type="button" class="link-rate" onclick="openReviewModal(${p.id})" style="background:none; border:none; color:var(--green-sage); font-size:12.5px; font-weight:700; cursor:pointer; text-decoration:underline;">+ Gửi đánh giá 1-5 sao</button>
+        </div>
+        <div style="font-size:13px; color:#496352; line-height:1.45;">
+          “Hộp chia 4 ngăn rất gọn gàng, mang đi học không lo tràn nước sốt ra ngoài. Quy trình mượn tại căn tin và quét máy tự động hoàn cọc 25k rất tiện!” – <i>Thùy Trang (K47 ĐH Sư phạm)</i>
+        </div>
+      </div>
+
       <div class="quickview__actions" style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
-        <a href="#cua-hang" class="btn btn--primary" style="flex:1;" onclick="quickviewModal.classList.remove('show');">
+        <a href="#cua-hang" class="btn btn--primary" style="flex:1.2; min-width:180px;" onclick="quickviewModal.classList.remove('show');">
           Xem 2 Căn Tin & 8 Quán Đối Tác Mượn Hộp
         </a>
+        <button type="button" class="btn btn--outline" style="flex:0.8; font-weight:700;" onclick="openReviewModal(${p.id});">
+          ⭐ Đánh giá hộp này
+        </button>
         <button class="btn btn--outline" style="flex:1;" onclick="quickviewModal.classList.remove('show'); openRegisterModal('${p.name}');">
-          🤝 Đăng ký trải nghiệm mô hình
+          🤝 Đăng ký trải nghiệm
         </button>
       </div>
     </div>
@@ -1417,6 +1439,116 @@ function toast(msg) {
   el.classList.add('show');
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => el.classList.remove('show'), 2600);
+}
+
+
+/* ---------- MODAL ĐÁNH GIÁ SẢN PHẨM (1 ĐẾN 5 SAO) ---------- */
+const reviewModal = $('#reviewModal');
+const closeReviewModalBtn = $('#closeReviewModal');
+const productReviewForm = $('#productReviewForm');
+const starWidget = $('#starWidget');
+const starRatingDesc = $('#starRatingDesc');
+const reviewProductName = $('#reviewProductName');
+const reviewProductId = $('#reviewProductId');
+
+let selectedRating = 5;
+const RATING_DESC = {
+  1: '😞 <b>1 / 5 sao:</b> Rất không hài lòng',
+  2: '🙁 <b>2 / 5 sao:</b> Chưa hài lòng',
+  3: '😐 <b>3 / 5 sao:</b> Bình thường / Tạm ổn',
+  4: '😊 <b>4 / 5 sao:</b> Hài lòng & Tiện lợi',
+  5: '🤩 <b>5 / 5 sao:</b> Rất hài lòng & ủng hộ lối sống xanh!'
+};
+
+function updateStarUI(val) {
+  if (!starWidget) return;
+  const stars = starWidget.querySelectorAll('.star-btn');
+  stars.forEach(btn => {
+    const starNum = parseInt(btn.dataset.star, 10);
+    btn.classList.toggle('is-active', starNum <= val);
+  });
+  if (starRatingDesc) {
+    starRatingDesc.innerHTML = RATING_DESC[val] || '';
+  }
+}
+
+function setRating(val) {
+  selectedRating = val;
+  updateStarUI(val);
+}
+
+if (starWidget) {
+  const stars = starWidget.querySelectorAll('.star-btn');
+  stars.forEach(btn => {
+    const starNum = parseInt(btn.dataset.star, 10);
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      setRating(starNum);
+    });
+    btn.addEventListener('mouseenter', () => {
+      updateStarUI(starNum);
+    });
+  });
+  starWidget.addEventListener('mouseleave', () => {
+    updateStarUI(selectedRating);
+  });
+}
+
+function openReviewModal(productId = 1) {
+  const p = PRODUCTS.find(x => x.id === productId) || PRODUCTS[0];
+  if (reviewProductId) reviewProductId.value = p.id;
+  if (reviewProductName) reviewProductName.textContent = p.name;
+  setRating(5);
+  if (reviewModal) {
+    reviewModal.classList.add('show');
+    reviewModal.setAttribute('aria-hidden', 'false');
+  }
+}
+
+function closeReviewModal() {
+  if (reviewModal) {
+    reviewModal.classList.remove('show');
+    reviewModal.setAttribute('aria-hidden', 'true');
+  }
+}
+
+window.openReviewModal = openReviewModal;
+window.closeReviewModal = closeReviewModal;
+
+if (closeReviewModalBtn) closeReviewModalBtn.onclick = closeReviewModal;
+if (reviewModal) {
+  reviewModal.addEventListener('click', e => {
+    if (e.target === reviewModal) closeReviewModal();
+  });
+}
+
+if (productReviewForm) {
+  productReviewForm.onsubmit = e => {
+    e.preventDefault();
+    const pId = parseInt(reviewProductId.value, 10) || 1;
+    const author = $('#revAuthor') ? $('#revAuthor').value.trim() : 'Bạn';
+    const comment = $('#revComment') ? $('#revComment').value.trim() : '';
+    const p = PRODUCTS.find(x => x.id === pId);
+
+    if (p) {
+      p.reviews = (p.reviews || 0) + 1;
+      // Cập nhật số sao và lượt đánh giá ở mọi nơi trên web
+      const ratingEl = document.querySelector(`.rating-val-${p.id}`);
+      if (ratingEl) ratingEl.textContent = p.rating.toFixed(1);
+      const countEl = document.querySelector(`.review-count-${p.id}`);
+      if (countEl) countEl.textContent = `(${p.reviews} đánh giá)`;
+
+      // Cập nhật lại grid sản phẩm
+      renderGrid();
+      renderBestGrid();
+    }
+
+    closeReviewModal();
+    productReviewForm.reset();
+    setRating(5);
+
+    toast(`🎉 Cảm ơn ${author} đã đánh giá ${selectedRating} sao cho ${p ? p.name : 'sản phẩm'}!`);
+  };
 }
 
 /* ---------- KHỞI TẠO BAN ĐẦU ---------- */

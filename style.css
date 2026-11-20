@@ -4664,3 +4664,144 @@ textarea {
     padding: 24px 20px !important;
   }
 }
+
+
+/* ---------- MODAL & NÚT ĐÁNH GIÁ SẢN PHẨM 1 ĐẾN 5 SAO ---------- */
+.review-modal__box {
+  max-width: 540px !important;
+  border-radius: 20px !important;
+  border: 2px solid #b7e0c8 !important;
+  padding: 30px 28px !important;
+  box-shadow: 0 16px 48px rgba(45, 102, 69, 0.16) !important;
+}
+
+.review-modal-head {
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #e5eee8;
+}
+
+.star-rating-block {
+  margin-bottom: 16px;
+  padding: 14px 16px;
+  background: #fbfdf9;
+  border-radius: 14px;
+  border: 1px solid #e1efe5;
+  text-align: center;
+}
+
+.star-rating-widget {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 6px 0 8px;
+}
+
+.star-btn {
+  background: none;
+  border: none;
+  font-size: 34px;
+  line-height: 1;
+  color: #d1d5db;
+  cursor: pointer;
+  padding: 2px 4px;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.2s ease;
+  user-select: none;
+}
+
+.star-btn:hover {
+  transform: scale(1.22);
+}
+
+.star-btn.is-active {
+  color: #f59e0b;
+  text-shadow: 0 2px 8px rgba(245, 158, 11, 0.35);
+}
+
+.star-rating-text {
+  font-size: 13.5px;
+  color: #2d6645;
+  background: #f4fbf7;
+  padding: 5px 14px;
+  border-radius: 20px;
+  border: 1px solid #d6f0e1;
+  display: inline-block;
+  margin-top: 4px;
+}
+
+.review-tags-block {
+  margin-top: 14px;
+}
+
+.review-label {
+  display: block;
+  font-size: 13.5px;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+
+.review-tag-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.chip-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12.5px;
+  background: #ffffff;
+  border: 1px solid #d2e4d6;
+  border-radius: 16px;
+  padding: 5px 11px;
+  cursor: pointer;
+  color: #496352;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.chip-item input[type="checkbox"] {
+  accent-color: #2d6645;
+  cursor: pointer;
+}
+
+.chip-item:hover {
+  border-color: #2d6645;
+  background: #f4fbf7;
+}
+
+.card__rate-btn {
+  background: #fffdf0;
+  border: 1px solid #fae477;
+  color: #8a6400;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 2px 7px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.card__rate-btn:hover {
+  background: #fae477;
+  color: #5c4800;
+  transform: translateY(-1px);
+}
+
+.box-card__rating-row {
+  transition: border-color 0.25s ease;
+}
+
+.box-card__rating-row:hover {
+  border-color: #91A384 !important;
+}
+
+.btn--rate {
+  transition: all 0.2s ease;
+}
+
+.btn--rate:hover {
+  background: #2d6645 !important;
+  color: #ffffff !important;
+}
